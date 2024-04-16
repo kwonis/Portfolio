@@ -11,7 +11,7 @@ const Main: React.FC = () => {
       <MainStyle.MainContent>
         <MainStyle.Title>Welcome to My Portfolio</MainStyle.Title>
         <div id="paragraph1">
-        <MainStyle.Paragraph1s>여백1</MainStyle.Paragraph1s>
+        <MainStyle.Paragraph1s>여1</MainStyle.Paragraph1s>
         </div>
         <div>
           <MainStyle.Paragraph1>Paragraph 1 Content</MainStyle.Paragraph1>
