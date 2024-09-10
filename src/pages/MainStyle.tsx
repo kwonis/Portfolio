@@ -1,69 +1,45 @@
-// MainStyle.tsx
-
 import styled from 'styled-components';
 
 export const MainContainer = styled.div`
-  text-align: center;
+  width: 100%; /* 전체 너비를 차지하도록 설정 */
+  margin: 0; /* 마진을 없앱니다 */
+  padding: 0; /* 패딩을 없앱니다 */
 `;
 
 export const MainContent = styled.div`
-  padding: 20px;
-  margin-top: 60px; /* 헤더의 높이를 여기서 참고하여 상단 여백 추가 */
+  width: 100%; /* 전체 너비를 차지하도록 설정 */
+  margin: 0; /* 마진을 없앱니다 */
+  padding: 0; /* 패딩을 없앱니다 */
 `;
 
 export const Title = styled.h1`
   font-size: 2rem;
-  margin-bottom: 20px;
+  width: 100%; /* 전체 너비를 차지하도록 설정 */
+  background-color: #d0e7ff; /* 밝은 파랑 배경색 */
+  margin: 0; /* 마진을 없앱니다 */
 `;
 
-export const Paragraph1 = styled.p`
-  font-size: 2rem;
-  margin-top: 60px;
-  margin-bottom: 200px;
-`;
 export const Paragraph1s = styled.p`
   font-size: 2rem;
+  color: rgba(0, 0, 0, 0); /* 검정색(0, 0, 0)에 투명도 0.5 적용 */
+  margin: 0; /* 마진을 없앱니다 */
+  padding:20px;
+  width: 100%; /* 전체 너비를 차지하도록 설정 */
 `;
 
-export const Paragraph2 = styled.p`
-  font-size: 2rem;
-  margin-top: 60px;
-  margin-bottom: 200px;
-`;
 export const Paragraph2s = styled.p`
   font-size: 2rem;
-`;
-
-export const Paragraph3 = styled.p`
-  font-size: 2rem;
-  margin-top: 60px;
-  margin-bottom: 200px;
+  color: rgba(0, 0, 0, 0); /* 검정색(0, 0, 0)에 투명도 0.5 적용 */
+  margin: 0; /* 마진을 없앱니다 */
+  padding:20px;
+  width: 100%; /* 전체 너비를 차지하도록 설정 */
+  background-color: #f0f0f0; /* 밝은 회색 배경색 */
 `;
 export const Paragraph3s = styled.p`
   font-size: 2rem;
+  color: rgba(0, 0, 0, 0); /* 검정색(0, 0, 0)에 투명도 0.5 적용 */
+  margin: 0; /* 마진을 없앱니다 */
+  padding:20px;
+  width: 100%; /* 전체 너비를 차지하도록 설정 */
+  background-color: #f0f0f0; /* 밝은 회색 배경색 */
 `;
-
-export const Paragraph4 = styled.p`
-  font-size: 2rem;
-  margin-top: 60px;
-  margin-bottom: 200px;
-`;
-export const Paragraph4s = styled.p`
-  font-size: 2rem;
-`;
-
-const MainStyle = {
-  MainContainer,
-  MainContent,
-  Title,
-  Paragraph1,
-  Paragraph2,
-  Paragraph3,
-  Paragraph4,
-  Paragraph1s,
-  Paragraph2s,
-  Paragraph3s,
-  Paragraph4s,
-};
-
-export default MainStyle;

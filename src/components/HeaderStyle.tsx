@@ -5,13 +5,15 @@ import styled from 'styled-components';
 export const Header = styled.header`
   background-color: #333;
   color: white;
-  padding: 10px 0;
+  padding: 20px 0;
+  margin-bottom:20px;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
   text-align: center; /* 헤더의 내용을 중앙 정렬합니다 */
 `;
+
 
 export const Logo = styled.div`
   font-size: 1.5rem;
@@ -37,9 +39,13 @@ export const Nav = styled.nav`
     li {
       margin: 0 10px;
 
-      a {
+      button {
         color: white;
-        text-decoration: none;
+        background-color: transparent;
+        border: none;
+        font-size: 16px; /* 버튼의 글꼴 크기 */
+        padding: 10px 20px; /* 버튼의 패딩 */
+        cursor: pointer;
 
         &:hover {
           text-decoration: underline;
