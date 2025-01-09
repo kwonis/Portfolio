@@ -1,45 +1,41 @@
 import styled from 'styled-components';
 
+// MainContainer 스타일 정의
 export const MainContainer = styled.div`
-  width: 100%; /* 전체 너비를 차지하도록 설정 */
-  margin: 0; /* 마진을 없앱니다 */
-  padding: 0; /* 패딩을 없앱니다 */
+  width: 100%;
+  margin: 0;
+  padding: 0;
 `;
 
+// MainContent 스타일 정의
 export const MainContent = styled.div`
-  width: 100%; /* 전체 너비를 차지하도록 설정 */
-  margin: 0; /* 마진을 없앱니다 */
-  padding: 0; /* 패딩을 없앱니다 */
+  width: 100%;
+  margin: 0;
+  padding: 0;
 `;
 
-export const Title = styled.h1`
-  font-size: 2rem;
-  width: 100%; /* 전체 너비를 차지하도록 설정 */
-  background-color: #d0e7ff; /* 밝은 파랑 배경색 */
-  margin: 0; /* 마진을 없앱니다 */
+// Title 스타일 정의 (스크롤에 따라 동적 스타일 적용)
+export const Title = styled.h1<{ scrollY: number }>`
+  height: 100vh; /* 전체 화면 높이 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black; /* 배경색 */
+  color: white; /* 텍스트 색상 */
+  font-size: 3rem; /* 큰 글자 크기 */
+  margin: 0;
+
+  /* 스크롤에 따라 투명도와 위치 변경 */
+  opacity: ${({ scrollY }) => Math.max(1 - scrollY / window.innerHeight, 0)};
+  transform: translateY(${({ scrollY }) => Math.min(scrollY / 2, 100)}px); /* 위로 이동 */
+  
+  transition: opacity 0.3s ease, transform 0.3s ease; /* 부드러운 애니메이션 */
 `;
 
-export const Paragraph1s = styled.p`
-  font-size: 2rem;
-  color: rgba(0, 0, 0, 0); /* 검정색(0, 0, 0)에 투명도 0.5 적용 */
-  margin: 0; /* 마진을 없앱니다 */
-  padding:20px;
-  width: 100%; /* 전체 너비를 차지하도록 설정 */
-`;
-
-export const Paragraph2s = styled.p`
-  font-size: 2rem;
-  color: rgba(0, 0, 0, 0); /* 검정색(0, 0, 0)에 투명도 0.5 적용 */
-  margin: 0; /* 마진을 없앱니다 */
-  padding:20px;
-  width: 100%; /* 전체 너비를 차지하도록 설정 */
-  background-color: #f0f0f0; /* 밝은 회색 배경색 */
-`;
-export const Paragraph3s = styled.p`
-  font-size: 2rem;
-  color: rgba(0, 0, 0, 0); /* 검정색(0, 0, 0)에 투명도 0.5 적용 */
-  margin: 0; /* 마진을 없앱니다 */
-  padding:20px;
-  width: 100%; /* 전체 너비를 차지하도록 설정 */
-  background-color: #f0f0f0; /* 밝은 회색 배경색 */
+// SectionTitle 스타일 정의
+export const SectionTitle = styled.h1`
+  font-size: 36px;
+  padding: 95px 0 0;
+  text-align: center;
+  color: #333;
 `;

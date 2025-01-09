@@ -10,34 +10,54 @@ interface ProjectProps {
   features: string[];
   skills: string;
   githubLink: string;
-  homeLink: string; // 수정된 부분: HomeLink props 대신 homeLink props 사용
+  homeLink?: string; // 선택적 홈 링크
   imageUrl: string;
+  status?: string; // 프로젝트 상태 (예: "완료", "진행 중")
 }
 
-const Project: React.FC<ProjectProps> = ({ title, date, description, features, skills, githubLink, homeLink, imageUrl }) => {
+const Project: React.FC<ProjectProps> = ({
+  title,
+  date,
+  description,
+  features,
+  skills,
+  githubLink,
+  homeLink = '', // 기본값은 빈 문자열
+  imageUrl,
+  status = "완료", // 기본값은 "완료"
+}) => {
   return (
     <Styled.ProjectContainer>
       <Styled.ProjectImage src={imageUrl} alt={title} />
       <Styled.ProjectContent>
         <Styled.ProjectTitle>{title}</Styled.ProjectTitle>
         <Styled.ProjectDate>{date}</Styled.ProjectDate>
+        <Styled.ProjectStatus>{`상태: ${status}`}</Styled.ProjectStatus>
         <Styled.ProjectDescription>{description}</Styled.ProjectDescription>
-        <Styled.HorizontalLine /> {/* 수평선 추가 */}
+
         <Styled.ProjectFeatures>
           <Styled.Contitle>주요 기능</Styled.Contitle>
-          <Styled.Featurecontents> {features.map((feature, index) => (
+          <Styled.Featurecontents>
+          {features.map((feature, index) => (
             <li key={index}>{feature}</li>
-          ))}</Styled.Featurecontents>
-         
+          ))}
+        </Styled.Featurecontents>
+
         </Styled.ProjectFeatures>
-        <Styled.ProjectSkills>{skills}</Styled.ProjectSkills>
+        <Styled.ProjectSkills>사용 기술 : {skills}</Styled.ProjectSkills>
         <Styled.Icon>
-          <Styled.GitHubLink href={githubLink} target="_blank" rel="noopener noreferrer">
-            <FaGithub size={40} color="black" /> {/* GitHub 아이콘 */}
-          </Styled.GitHubLink>
-          <Styled.HomeLink href={homeLink} target="_blank" rel="noopener noreferrer">
-            <FiHome size={40} color="black" /> {/* 집 아이콘 */}
-          </Styled.HomeLink>
+          {/* GitHub 링크는 항상 표시 */}
+          {githubLink && (
+            <Styled.GitHubLink href={githubLink} target="_blank" rel="noopener noreferrer">
+              <FaGithub size={30} /> {/* GitHub 아이콘 */}
+            </Styled.GitHubLink>
+          )}
+          {/* Home 링크는 homeLink가 빈 문자열이 아닐 때만 표시 */}
+          {homeLink && homeLink.trim() !== '' && (
+            <Styled.HomeLink href={homeLink} target="_blank" rel="noopener noreferrer">
+              <FiHome size={30} /> {/* Home 아이콘 */}
+            </Styled.HomeLink>
+          )}
         </Styled.Icon>
       </Styled.ProjectContent>
     </Styled.ProjectContainer>

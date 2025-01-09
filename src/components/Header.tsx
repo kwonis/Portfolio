@@ -15,9 +15,9 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
       
       if (targetElement) {
         // 조금 위에서부터 배경색이 변경되도록 기준 위치를 설정합니다.
-        const targetPosition = targetElement.offsetTop - 5; // 여기서 100은 조정할 값입니다.
+        const targetPosition = targetElement.offsetTop - 90; // 여기서 100은 조정할 값입니다.
 
-        if (scrollPosition > targetPosition) {
+        if (scrollPosition >= targetPosition) {
           setIsScrolled(true);
         } else {
           setIsScrolled(false);
@@ -41,7 +41,12 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
   };
 
   return (
-    <HeaderStyle.Header style={{ backgroundColor: isScrolled ? '#555' : 'rgba(0,0,0,0)' }}>
+    <HeaderStyle.Header 
+      style={{ 
+        backgroundColor: isScrolled ? '#555' : 'rgba(0,0,0,0)', 
+        opacity: isScrolled ? 1 : 0 // 스크롤 여부에 따라 투명도 변경
+      }}
+    >
       <HeaderStyle.Nav>
         <ul>
           <li><button style={{color: isScrolled ? '#fff' : 'rgba(0,0,0,1)' }} onClick={() => scrollToParagraph("paragraph1")}>About</button></li>

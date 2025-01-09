@@ -1,116 +1,121 @@
 import styled from 'styled-components';
 
+// 프로젝트 카드 컨테이너
 export const ProjectContainer = styled.div`
   display: flex;
-  align-items: center; /* 이미지와 텍스트를 세로 중앙 정렬 */
-  border-radius: 8px; /* 테두리 반경 */
-  padding:20px;
-  width: 70%;
-  background-color: #f0f0f0; /* 밝은 회색 배경색 */
-  margin: 0 auto; /* 수평 가운데 정렬 */
+  justify-content: space-between; /* Items are pushed to the edges with space in between */
+  align-items: flex-start; /* Align items at the top */
+  border-radius: 12px; /* Rounded corners */
+  padding: 20px;
+  width: 80%; /* Card width */
+  background-color: #ffffff; /* White background */
+  margin: 20px auto; /* Center horizontally with vertical spacing */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  /* 첫 번째 프로젝트 컨테이너의 위쪽에만 마진 추가 */
-  &:first-child {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
 
-  /* 마지막 프로젝트 컨테이너의 아래쪽에만 마진 추가 */
-  &:last-child {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-
-  /* 나머지 모든 프로젝트 컨테이너 사이에만 마진 추가 */
-  &:not(:first-child) {
-    margin-top: 50px;
-    margin-bottom: 50px;
+  &:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    background-color: #f9f9f9; /* Slightly lighter background on hover */
+    cursor: pointer;
   }
 `;
 
 
-// 나머지 스타일은 동일하게 유지
+
+
+// 이미지 스타일
 export const ProjectImage = styled.img`
-  width: 50%;
-  height: 100%;
-  margin-right: 20px;
-  object-fit: contain; /* 이미지가 왜곡되지 않고 적절한 크기로 표시됩니다. */
+  margin : auto 0 ;
+  width: 45%; /* 이미지 너비 */
+  height: 100%; /* 비율 유지 */
 `;
 
+// 텍스트 컨테이너
 export const ProjectContent = styled.div`
   display: flex;
+  width : 50%;
   flex-direction: column;
-  height: 100%;
-  margin-left: 20px; /* 이미지와 텍스트 사이의 간격 조정 */
 `;
 
+// 제목 스타일
 export const ProjectTitle = styled.h3`
-  margin: 0;
-  font-size: 24px;
+  margin-bottom: 10px;
 `;
 
+// 날짜 스타일
 export const ProjectDate = styled.p`
-  margin: 5px 0;
-  color: #666;
+  font-size: small;
 `;
 
+// 상태 스타일
+export const ProjectStatus = styled.p`
+  font-size: small;
+`;
+
+// 설명 스타일
 export const ProjectDescription = styled.p`
-  margin: 10px 0;
+  text-align: center; /* 텍스트를 가운데 정렬 */
+  margin: 10px 0; /* 위아래 여백 */
+  font-size: 16px; /* 글자 크기 */
+  line-height: 1.6; /* 줄 간격 */
 `;
 
+// 주요 기능 섹션
 export const ProjectFeatures = styled.div`
-  display: flex;
-  flex-direction: row; /* 요소들을 가로로 정렬 */
 `;
 
-export const Contitle = styled.div`
-  color: red;
+export const Contitle = styled.h3`
 `;
 
 export const Featurecontents = styled.ul`
-  margin: 5px 0; /* 간격 수정 */
-  color: #333; /* 주요 기능 내용의 색상을 수정 */
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 10px auto; /* Center align horizontally */
+  width: fit-content; /* Adjust width based on content */
+  min-width: 200px; /* Ensure it doesn't shrink too much */
+  max-width: 600px; /* Limit maximum width */
+  text-align: left; /* Align text to the left for readability */
+
+  li {
+    margin-bottom: 8px; /* Add spacing between list items */
+    font-size: 16px; /* Set font size */
+    line-height: 1.5; /* Improve readability */
+    color: #333; /* Darker text color for better contrast */
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Make it full width on smaller screens */
+    text-align: center; /* Center align text for smaller screens */
+  }
 `;
 
 export const ProjectSkills = styled.p`
-  margin: 10px 0;
 `;
 
-export const LinkContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-`;
+export const Icon =styled.div``
 
 export const GitHubLink = styled.a`
   text-decoration: none;
   font-size: 20px;
-  margin-right: 20px;
-  color: blue; /* 링크 색상 수정 */
+  margin-right: 15px;
+  color: #000; /* 기본 검정색 */
   
   &:hover {
-    text-decoration: underline;
+    color: #0077b6; /* 호버 시 파란색 */
+    text-decoration: underline; /* 호버 시 밑줄 */
   }
 `;
 
 export const HomeLink = styled.a`
   text-decoration: none;
   font-size: 20px;
-  margin-right: 8px;
-  color: blue; /* 링크 색상 수정 */
+  margin-right: 15px;
+  color: #000; /* 기본 검정색 */
   
   &:hover {
-    text-decoration: underline;
+    color: #0077b6; /* 호버 시 파란색 */
+    text-decoration: underline; /* 호버 시 밑줄 */
   }
-`;
-
-export const HorizontalLine = styled.hr`
-  border-top: 1px solid #ccc;
-  margin: 20px 0;
-`;
-
-export const Icon = styled.div`
-  display: flex;
-  align-items: center;
-  color: black; /* 아이콘 색상을 검정색으로 설정 */
 `;

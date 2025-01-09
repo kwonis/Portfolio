@@ -1,25 +1,25 @@
 import React from 'react';
-import { FooterWrapper, IconContainer, IconLink } from './FooterStyle';
+import { FooterWrapper, IconContainer, IconLink, Email } from './FooterStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Footer: React.FC = () => {
     return (
         <FooterWrapper>
             <IconContainer>
-                <IconLink href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faFacebook} size="2x" />
+                {/* GitHub */}
+                <IconLink href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faGithub} size="2x" />
                 </IconLink>
-                <IconLink href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faTwitter} size="2x" />
-                </IconLink>
-                <IconLink href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faInstagram} size="2x" />
-                </IconLink>
-                <IconLink href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                {/* Email */}
+                <IconLink href="mailto:oninseoung@naver.com">
+                    <FontAwesomeIcon icon={faEnvelope} size="2x" />
                 </IconLink>
             </IconContainer>
+            {/* Email Address */}
+            <Email>Contact: oninseoung@naver.com</Email>
+
         </FooterWrapper>
     );
 };

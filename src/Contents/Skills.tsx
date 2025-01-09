@@ -7,8 +7,9 @@ import reactImage from '../image/react.png';
 import htmlImage from '../image/html.png';
 import cssImage from '../image/css.png';
 import typescriptImage from '../image/ts.png';
-import reduxImage from '../image/redux.png';
 import githubImage from '../image/github.png';
+import vueImage from '../image/vue.png'
+import pythonImage from '../image/python.png'
 
 const SkillsPage: React.FC = () => {
     // 스킬 데이터
@@ -34,8 +35,12 @@ const SkillsPage: React.FC = () => {
             image: reactImage,
         },
         {
-            name: 'Redux',
-            image: reduxImage,
+            name: 'Vue',
+            image: vueImage,
+        },
+        {
+            name: 'python',
+            image: pythonImage,
         },
         {
             name: 'Github',
@@ -45,18 +50,17 @@ const SkillsPage: React.FC = () => {
     ];
 
     return (
-        <>
+        <Styled.SkillsContainer>
             <Styled.Title>My Skills</Styled.Title> {/* 타이틀 추가 */}
-            <Styled.SkillsContainer>
+            <Styled.Skills>
                 {skills.map((skill, index) => (
                     <Styled.SkillCard key={index}>
                         <Styled.SkillImage src={skill.image} alt={`${skill.name} image`} />
                         <Styled.SkillName>{skill.name}</Styled.SkillName>
-                        {/* <Styled.SkillDescription>{skill.description}</Styled.SkillDescription> */}
                     </Styled.SkillCard>
                 ))}
-            </Styled.SkillsContainer>
-        </>
+            </Styled.Skills>
+        </Styled.SkillsContainer>
     );
 };
 

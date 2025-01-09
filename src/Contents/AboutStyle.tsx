@@ -8,6 +8,7 @@ export const IntroductionContainer = styled.div`
   border-radius: 8px;
   width: 100%;
   margin: 0 auto;
+  padding : 70px 0;
 `;
 
 export const MyPage = styled.div`

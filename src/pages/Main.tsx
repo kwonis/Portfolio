@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import About from '../Contents/About';
@@ -8,34 +8,40 @@ import { projects } from '../Data/projectsData';
 import * as Styled from './MainStyle';
 
 const Main: React.FC = () => {
+  const [scrollY, setScrollY] = useState(0); // 스크롤 위치 상태
+
+  // 스크롤 이벤트 핸들러
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY); // 현재 스크롤 위치 저장
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <Styled.MainContainer>
       <Header title="My Portfolio" />
       <Styled.MainContent>
-        <Styled.Title>
-          <div>Welcome to My Portfolio</div>
-          <div>Welcome to My Portfolio</div>
-          <div>Welcome to My Portfolio</div>
-          <div>Welcome to My Portfolio</div>
+        {/* 타이틀 섹션 */}
+        <Styled.Title scrollY={scrollY}>
           <div>Welcome to My Portfolio</div>
         </Styled.Title>
-      
+        {/* About 섹션 */}
         <div id="paragraph1">
-          <Styled.Paragraph1s>여백1</Styled.Paragraph1s>
+          <About />
         </div>
-        <div>
-          <About/>
-        </div>
+        {/* Skills 섹션 */}
         <div id="paragraph2">
-          <Styled.Paragraph2s>여백2</Styled.Paragraph2s>
+          <Skills />
         </div>
-        <div>
-          <Skills/>
-        </div>
+        {/* Projects 섹션 */}
         <div id="paragraph3">
-          <Styled.Paragraph3s>여백3</Styled.Paragraph3s>
-        </div>
-        <div>
+          <Styled.SectionTitle>Projects</Styled.SectionTitle>
           {projects.map((project, index) => (
             <Project
               key={index}
@@ -51,7 +57,9 @@ const Main: React.FC = () => {
           ))}
         </div>
       </Styled.MainContent>
-      <Footer/>
+
+      {/* Footer */}
+      <Footer />
     </Styled.MainContainer>
   );
 };

@@ -25,10 +25,12 @@ const Introduction: React.FC = () => {
                 <div>
                     <Styled.MidleTitle>EDUCATION</Styled.MidleTitle>
                     <Styled.Bio2>
-                        <p>한양대학교에리카 신산업소프트웨어학과 중국학과</p>
+                        <p>한양대학교 ERICA 신산업소프트웨어학과 중국학과</p>
                         <p>(2017.03 ~ 2023.02)</p>
                         <p>코드스테이츠 프론트엔드 부트캠프</p>
                         <p>(2023.04 ~ 2023.10)</p>
+                        <p>삼성 청년 소프트웨어 아카데미 12기(SSAFY)</p>
+                        <p>(2024.07 ~ )</p>
                     </Styled.Bio2>
                 </div></Styled.Aboutcon>
                 

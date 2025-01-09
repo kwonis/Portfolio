@@ -1,10 +1,22 @@
 import styled from 'styled-components';
 
 export const SkillsContainer = styled.div`
+  display: flex;
+  background-color: #f0f0f0; /* 밝은 회색 배경색 */
+  flex-direction: column;
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  border-radius: 8px;
+  width: 100%;
+  margin: 0 auto;
+  padding : 70px 0;
+`;
+
+export const Skills = styled.div`
     display: flex;
     flex-wrap: wrap;  // 여러 개의 스킬 카드를 배치할 수 있도록 유연하게 배치
     justify-content: center;  // 수평 중앙 정렬
-    padding: 20px;  // 전체 패딩
+    margin : 0 auto;
     background-color: #f0f0f0; /* 밝은 회색 배경색 */
 `;
 
@@ -47,9 +59,8 @@ export const SkillDescription = styled.p`
 `;
 
 export const Title = styled.h1`
-    font-size: 36px;  // 타이틀 크기
-    text-align: center;  // 중앙 정렬
-    margin:0;
-    color: #333;  // 글자 색상
-    background-color: #f0f0f0; /* 밝은 회색 배경색 */
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
 `;
