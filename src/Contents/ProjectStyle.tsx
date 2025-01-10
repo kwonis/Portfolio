@@ -23,8 +23,6 @@ export const ProjectContainer = styled.div`
 `;
 
 
-
-
 // 이미지 스타일
 export const ProjectImage = styled.img`
   margin : auto 0 ;
@@ -49,10 +47,6 @@ export const ProjectDate = styled.p`
   font-size: small;
 `;
 
-// 상태 스타일
-export const ProjectStatus = styled.p`
-  font-size: small;
-`;
 
 // 설명 스타일
 export const ProjectDescription = styled.p`
@@ -66,6 +60,27 @@ export const ProjectDescription = styled.p`
 export const ProjectFeatures = styled.div`
 `;
 
+export const Achievements = styled.ul`
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 10px auto; /* Center align horizontally */
+  width: fit-content; /* Adjust width based on content */
+  min-width: 200px; /* Ensure it doesn't shrink too much */
+  max-width: 600px; /* Limit maximum width */
+
+  li {
+    margin-bottom: 8px; /* Add spacing between list items */
+    font-size: 16px; /* Set font size */
+    line-height: 1.5; /* Improve readability */
+    color: #333; /* Darker text color for better contrast */
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Make it full width on smaller screens */
+    text-align: center; /* Center align text for smaller screens */
+  }
+`;
+
 export const Contitle = styled.h3`
 `;
 
@@ -76,7 +91,7 @@ export const Featurecontents = styled.ul`
   width: fit-content; /* Adjust width based on content */
   min-width: 200px; /* Ensure it doesn't shrink too much */
   max-width: 600px; /* Limit maximum width */
-  text-align: left; /* Align text to the left for readability */
+
 
   li {
     margin-bottom: 8px; /* Add spacing between list items */

@@ -1,30 +1,21 @@
-// HeaderStyle.tsx
-
 import styled from 'styled-components';
 
-export const Header = styled.header`
-  background-color: #333;
+interface HeaderProps {
+  isScrolled: boolean;
+}
+
+export const Header = styled.header<HeaderProps>`
+  background-color: ${({ isScrolled }) =>
+    isScrolled ? 'rgba(0, 0, 0, 0.9)' : 'rgba(0, 0, 0, 0.5)'};
   color: white;
-  padding: 20px 0;
+  padding: 10px 0;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
-  text-align: center; /* 헤더의 내용을 중앙 정렬합니다 */
-`;
-
-
-export const Logo = styled.div`
-  font-size: 1.5rem;
-`;
-
-export const Title = styled.h1`
-  font-size: 2rem;
-  margin: 0; /* 기본 마진을 제거하여 위쪽 여백을 없앱니다 */
-  position: absolute; /* 헤더의 상단에 절대적으로 위치합니다 */
-  top: 50%; /* 헤더의 상단으로부터 세로 중앙에 위치하도록 설정합니다 */
-  left: 50%; /* 헤더의 좌측으로부터 가로 중앙에 위치하도록 설정합니다 */
-  transform: translate(-50%, -50%); /* 수평, 수직 정렬을 위해 좌표 이동합니다 */
+  box-shadow: ${({ isScrolled }) =>
+    isScrolled ? '0px 4px 6px rgba(0,0,0,0.3)' : 'none'};
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 `;
 
 export const Nav = styled.nav`
@@ -36,18 +27,23 @@ export const Nav = styled.nav`
     justify-content: center;
 
     li {
-      margin: 0 10px;
+      margin: 0 15px;
 
       button {
         color: white;
         background-color: transparent;
         border: none;
-        font-size: 16px; /* 버튼의 글꼴 크기 */
-        padding: 10px 20px; /* 버튼의 패딩 */
+        font-size: 18px; /* 버튼 글꼴 크기 */
+        font-weight: bold;
+        padding: 10px; /* 버튼 패딩 */
         cursor: pointer;
+        border-radius: 5px; /* 버튼 둥근 모서리 */
+        transition: all 0.3s ease-in-out;
 
         &:hover {
-          text-decoration: underline;
+          background-color: rgba(255, 255, 255, 0.2); /* 호버 시 배경색 */
+          color: #f8d64e; /* 호버 시 텍스트 색상 */
+          transform: scale(1.1); /* 약간 확대 효과 */
         }
       }
     }

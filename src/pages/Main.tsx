@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import About from '../Contents/About';
+import About from '../Contents/Introduction';
 import Skills from '../Contents/Skills';
 import Project from '../Contents/Project';
 import { projects } from '../Data/projectsData';
@@ -53,6 +53,7 @@ const Main: React.FC = () => {
               githubLink={project.githubLink}
               homeLink={project.homeLink}
               imageUrl={project.imageUrl}
+              achievements={project.achievements}
             />
           ))}
         </div>
