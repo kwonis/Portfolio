@@ -24,11 +24,8 @@ export const Title = styled.h1<{ scrollY: number }>`
   color: white; /* 텍스트 색상 */
   font-size: 3rem; /* 큰 글자 크기 */
   margin: 0;
-
   /* 스크롤에 따라 투명도와 위치 변경 */
   opacity: ${({ scrollY }) => Math.max(1 - scrollY / window.innerHeight, 0)};
-  transform: translateY(${({ scrollY }) => Math.min(scrollY / 2, 100)}px); /* 위로 이동 */
-  
   transition: opacity 0.3s ease, transform 0.3s ease; /* 부드러운 애니메이션 */
 `;
 
@@ -36,6 +33,7 @@ export const Title = styled.h1<{ scrollY: number }>`
 export const SectionTitle = styled.h1`
   font-size: 36px;
   padding: 95px 0 0;
+  margin-bottom : 40px;
   text-align: center;
   color: #333;
 `;

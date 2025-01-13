@@ -22,6 +22,7 @@ export const SkillCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between; /* 이미지와 텍스트 간 간격 유지 */
   padding: 20px;
   background-color: #ffffff; /* 카드 배경색 */
   border-radius: 12px; /* 둥근 모서리 */
@@ -38,23 +39,30 @@ export const SkillCard = styled.div`
 `;
 
 export const SkillImage = styled.img`
-width :60% ;
-height:auto ;
-margin-bottom :20 px ;
+width :80px ; /* 이미지 너비 고정 */
+height :80px ; /* 이미지 높이 고정 */
+margin-bottom :10px ; /* 이미지와 텍스트 간 간격 설정 */
+object-fit :contain ; /* 비율을 유지하며 이미지가 잘리지 않도록 설정 */
 `;
 
 export const SkillName = styled.h3`
-font-size :calc(18 px +1 rem);
-font-weight :bold ;
+font-size :16px ;
+font-weight:bold ;
 color:#333 ;
 text-align:center ;
+margin-top :10px ; /* 이미지와 텍스트 간 일정한 간격 유지 */
+
+min-height :30px ;/* 스킬명 고정 높이 설정*/
+display:flex ;
+align-items:center ;
+justify-content:center ;
 
 `;
 
 export const Title = styled.h1`
-font-size :calc(20 px +2 rem);
+font-size :calc(20px +2 rem);
 font-weight:bold ;
 color:#2d3748 ;
-margin-bottom :40 px ;
+margin-bottom :40px ;
 
 `;

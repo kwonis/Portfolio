@@ -35,7 +35,6 @@ const Project: React.FC<ProjectProps> = ({
         <Styled.ProjectTitle>{title}</Styled.ProjectTitle>
         <Styled.ProjectDate>{date}</Styled.ProjectDate>
         <Styled.ProjectDescription>{description}</Styled.ProjectDescription>
-
         <Styled.ProjectFeatures>
           <Styled.Contitle>담당 역할</Styled.Contitle>
           <Styled.Featurecontents>
@@ -44,7 +43,6 @@ const Project: React.FC<ProjectProps> = ({
             ))}
           </Styled.Featurecontents>
         </Styled.ProjectFeatures>
-
         {achievements && achievements.length > 0 && (
           <Styled.Achievements>
             <Styled.Contitle>성과 및 배운 점</Styled.Contitle>

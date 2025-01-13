@@ -68,15 +68,12 @@ export const Aboutcon = styled.div`
 display:flex ;
 flex-wrap :wrap ;
 justify-content:center ;
-gap :20 px;
-
+gap :20px;
 margin:auto ;
-
 width :50%;
- 
 `;
 
 export const Title = styled.h1`
-font-size :calc(20 px +2 rem);
+font-size :calc(20px +2 rem);
 color:#333 ;
 `;

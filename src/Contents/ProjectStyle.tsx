@@ -3,43 +3,43 @@ import styled from 'styled-components';
 // 프로젝트 카드 컨테이너
 export const ProjectContainer = styled.div`
   display: flex;
-  justify-content: space-between; /* Items are pushed to the edges with space in between */
-  align-items: flex-start; /* Align items at the top */
-  border-radius: 12px; /* Rounded corners */
+  justify-content: space-between; /* 이미지와 텍스트를 양쪽 정렬 */
+  align-items: flex-start; /* 아이템을 위쪽 정렬 */
+  border-radius: 16px; /* 둥근 모서리 */
   padding: 20px;
-  width: 80%; /* Card width */
-  background-color: #ffffff; /* White background */
-  margin: 20px auto; /* Center horizontally with vertical spacing */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 80%; /* 카드 너비 */
+  background-color: #ffffff; /* 카드 배경색 */
+  margin: 20px auto; /* 중앙 정렬 및 여백 */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* 기본 그림자 효과 */
+
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-
   &:hover {
-    transform: translateY(-10px); /* Slight lift on hover */
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
-    background-color: #f9f9f9; /* Slightly lighter background on hover */
+    transform: translateY(-10px); /* 호버 시 위로 이동 */
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 20px; /* 호버 시 그림자 강화 */
+    background-color: #f7fafc; /* 호버 시 밝은 파란색 배경 */
     cursor: pointer;
-  }
 `;
 
 
 // 이미지 스타일
 export const ProjectImage = styled.img`
   margin : auto 0 ;
-  width: 45%; /* 이미지 너비 */
+  width: 50%; /* 이미지 너비 */
   height: 100%; /* 비율 유지 */
 `;
-
 // 텍스트 컨테이너
 export const ProjectContent = styled.div`
-  display: flex;
-  width : 50%;
-  flex-direction: column;
+display:flex;
+padding : 0 20px;
+flex-direction :column;
+width : 100%
 `;
 
-// 제목 스타일
 export const ProjectTitle = styled.h3`
-  margin-bottom: 10px;
+font-size :calc(18px +1rem);
+font-weight:bold ;
+color:#2d3748 ;
 `;
 
 // 날짜 스타일
@@ -50,7 +50,6 @@ export const ProjectDate = styled.p`
 
 // 설명 스타일
 export const ProjectDescription = styled.p`
-  text-align: center; /* 텍스트를 가운데 정렬 */
   margin: 10px 0; /* 위아래 여백 */
   font-size: 16px; /* 글자 크기 */
   line-height: 1.6; /* 줄 간격 */
