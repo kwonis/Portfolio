@@ -3,54 +3,80 @@ import styled from 'styled-components';
 // 프로젝트 카드 컨테이너
 export const ProjectContainer = styled.div`
   display: flex;
-  justify-content: space-between; /* 이미지와 텍스트를 양쪽 정렬 */
-  align-items: flex-start; /* 아이템을 위쪽 정렬 */
-  border-radius: 16px; /* 둥근 모서리 */
+
+  justify-content: space-between;
+  align-items: flex-start;
+  border-radius: 16px;
   padding: 20px;
-  width: 80%; /* 카드 너비 */
-  background-color: #ffffff; /* 카드 배경색 */
-  margin: 20px auto; /* 중앙 정렬 및 여백 */
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* 기본 그림자 효과 */
+  width: 80%;
+  background-color: #ffffff;
+  margin: 20px auto;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-10px); /* 호버 시 위로 이동 */
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 20px; /* 호버 시 그림자 강화 */
-    background-color: #f7fafc; /* 호버 시 밝은 파란색 배경 */
+    transform: translateY(-10px);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 20px;
+    background-color: #f7fafc;
     cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* 모바일에서는 세로 정렬 */
+    width: 90%; /* 카드 너비를 줄임 */
+    padding: 15px;
+    margin-bottom: 30px; /* 요소 간 간격 추가 */
+  }
 `;
 
 
 // 이미지 스타일
 export const ProjectImage = styled.img`
-  margin : auto 0 ;
-  width: 50%; /* 이미지 너비 */
-  height: 100%; /* 비율 유지 */
+  margin: auto;
+  width: 50%;
+  height: auto; /* 비율 유지 */
+
+  @media (max-width: 768px) {
+    width: 100%; /* 모바일에서는 전체 너비 사용 */
+    margin-bottom: 15px; /* 이미지와 텍스트 간 간격 추가 */
+  }
 `;
 // 텍스트 컨테이너
 export const ProjectContent = styled.div`
-display:flex;
-padding : 0 20px;
-flex-direction :column;
-width : 100%
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  width: calc(50% - 20px); /* 이미지와 텍스트 공간 분리 */
+
+  @media (max-width: 768px) {
+    width: auto; /* 모바일에서는 전체 너비 사용 */
+    padding: 0;
+    text-align: center; /* 텍스트를 가운데 정렬 */
+  }
 `;
+
 
 export const ProjectTitle = styled.h3`
 font-size :calc(18px +1rem);
 font-weight:bold ;
 color:#2d3748 ;
+
+@media (max-width :400){
+font-size small}
+
 `;
 
 // 날짜 스타일
 export const ProjectDate = styled.p`
-  font-size: small;
-`;
+font-size :small;
+
+`
 
 
 // 설명 스타일
 export const ProjectDescription = styled.p`
-  margin: 10px 0; /* 위아래 여백 */
+  margin:auto
   font-size: 16px; /* 글자 크기 */
   line-height: 1.6; /* 줄 간격 */
 `;

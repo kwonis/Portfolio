@@ -7,7 +7,6 @@ export const SkillsContainer = styled.div`
   justify-content: center;
   background-color: #edf2f7; /* 부드러운 파란색 배경 */
   padding: 80px 20px; /* 여백 추가 */
-  border-radius: 8px;
 `;
 
 export const Skills = styled.div`

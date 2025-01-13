@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-
       <Main /> {/* Main 컴포넌트를 추가합니다. */}
       </header>
     </div>
