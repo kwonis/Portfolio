@@ -185,7 +185,7 @@ export const ProjectTitle = styled.h3`
 
 // 날짜 스타일
 export const ProjectDate = styled.p`
-  font-size: small;
+  font-size: 18px;
 `;
 
 // 설명 스타일
