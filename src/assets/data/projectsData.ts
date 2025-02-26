@@ -1,20 +1,24 @@
-// 기존 개별 import 대신 이 코드를 사용합니다
-// 이미지를 동적으로 로드하는 함수
-// 수정된 이미지 로드 함수
-function getImageUrl(path: string): string {
-  try {
-    // 절대 경로 사용
-    return `/src/assets/pjt/${path}`;
-    
-    // 또는 import.meta.url 사용 시 올바른 경로 지정
-    // return new URL(`/src/assets/pjt/${path}`, import.meta.url).href;
-  } catch (error) {
-    console.error(`이미지 로드 실패: ${path}`, error);
-    return ''; 
-  }
-}
-
-
+import antialarm from '../pjt/antips/alarm.png'
+import antirobot from '../pjt/antips/robot.png'
+import antilist from '../pjt/antips/list.png'
+import portmain from '../pjt/portfolio/main.png'
+import portabout from '../pjt/portfolio/about.png'
+import portskill from '../pjt/portfolio/skill.png'
+import portpjt from '../pjt/portfolio/pjt.png'
+import miyhlogin from '../pjt/miyh/login.png'
+import miyhrecommend from '../pjt/miyh/recommend.png'
+import miyhcalendar from '../pjt/miyh/calendar.png'
+import miyhsearch from '../pjt/miyh/search.png'
+import miyharticle from '../pjt/miyh/article.png'
+import miyhmypage from '../pjt/miyh/mypage.png'
+import miyhlocation from '../pjt/miyh/location.png'
+import ttudologin from '../pjt/ttudo/login.png'
+import ttudomypage from '../pjt/ttudo/mypage.png'
+import ttudousermodal from '../pjt/ttudo/usermodal.png'
+import studylogin from '../pjt/studyground/login.png'
+import studymain from '../pjt/studyground/main.png'
+import studysearch from '../pjt/studyground/search.png'
+import studymypage from '../pjt/studyground/mypage.png'
 
 export interface Project {
   title: string;
@@ -43,9 +47,9 @@ export const projects: Project[] = [
     githubLink: 'https://github.com/kwonis/Anti-ps',
     homeLink: 'https://www.antips.site/',
     imageUrl: [
-      getImageUrl('antips/alarm.png'),
-      getImageUrl('antips/robot.png'),
-      getImageUrl('antips/list.png')
+      antialarm,
+      antirobot,
+      antilist
     ],
     achievements: [
       'roslibjs 라이브러리 활용으로 로봇 제어 시스템 구현 및 WebSocket 통신 기술 습득',
@@ -68,10 +72,10 @@ export const projects: Project[] = [
     githubLink: 'https://github.com/kwonis/Protfolio',
     homeLink: 'https://kwonis.com',
     imageUrl: [
-      getImageUrl('portfolio/main.png'),
-      getImageUrl('portfolio/about.png'),
-      getImageUrl('portfolio/skill.png'),
-      getImageUrl('portfolio/pjt.png'),
+      portmain,
+      portabout,
+      portskill,
+      portpjt,
     ],
     achievements: [
       'React와 TypeScript를 활용한 컴포넌트 기반 설계 경험',
@@ -94,12 +98,13 @@ export const projects: Project[] = [
     githubLink: 'https://github.com/kwonis/MIYH',
     homeLink: '', // 홈 링크가 없는 경우 빈 문자열
     imageUrl: [
-      getImageUrl('miyh/login.png'),
-      getImageUrl('miyh/recommend.png'),
-      getImageUrl('miyh/calendar.png'),
-      getImageUrl('miyh/search.png'),
-      getImageUrl('miyh/article.png'),
-      getImageUrl('miyh/mypage.png'),
+      miyhlogin,
+      miyhrecommend,
+      miyhcalendar,
+      miyhsearch,
+      miyharticle,
+      miyhmypage,
+      miyhlocation
     ],
     achievements: [ 
       '삼성 청년 소프트웨어 아카데미 프로젝트 경연대회 🏆우수상 수상🏆',
@@ -122,9 +127,9 @@ export const projects: Project[] = [
     githubLink: 'https://github.com/ssafy-ttudo/ttudo-fe',
     homeLink: '',
     imageUrl: [
-      getImageUrl('ttudo/login.png'),
-      getImageUrl('ttudo/mypage.png'),
-      getImageUrl('ttudo/usermodal.png')
+      ttudologin,
+      ttudomypage,
+      ttudousermodal
     ],
     achievements: [
       'OAuth로부터 받은 access token과 서버에서 발급한 JWT token 간의 혼동 문제 식별',
@@ -147,10 +152,10 @@ export const projects: Project[] = [
     githubLink: 'https://github.com/kwonis/seb45_main_016',
     homeLink: '',
     imageUrl: [
-      getImageUrl('studyground/login.png'),
-      getImageUrl('studyground/main.png'),
-      getImageUrl('studyground/search.png'),
-      getImageUrl('studyground/mypage.png'),
+      studylogin,
+      studymain,
+      studysearch,
+      studymypage
     ],
     achievements: [
       'OAuth를 활용한 카카오 로그인 연동 경험',
