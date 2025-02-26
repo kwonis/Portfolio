@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
   };
 
   return (
-    <HeaderStyle.Header isScrolled={isScrolled}>
+    <HeaderStyle.Header $isScrolled={isScrolled}>
       <HeaderStyle.Nav>
         <ul>
           <li>

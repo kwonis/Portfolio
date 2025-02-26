@@ -15,7 +15,7 @@ export const MainContent = styled.div`
 `;
 
 // Title 스타일 정의 (스크롤에 따라 동적 스타일 적용)
-export const Title = styled.h1<{ scrollY: number }>`
+export const Title = styled.h1<{ $scrollY: number }>`
   height: 100vh; /* 전체 화면 높이 */
   display: flex;
   justify-content: center;
@@ -25,7 +25,7 @@ export const Title = styled.h1<{ scrollY: number }>`
   font-size: 3rem; /* 큰 글자 크기 */
   margin: 0;
   /* 스크롤에 따라 투명도와 위치 변경 */
-  opacity: ${({ scrollY }) => Math.max(1 - scrollY / window.innerHeight, 0)};
+  opacity: ${({ $scrollY }) => Math.max(1 - scrollY / window.innerHeight, 0)};
   transition: opacity 0.3s ease, transform 0.3s ease; /* 부드러운 애니메이션 */
 `;
 

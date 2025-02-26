@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import About from '../Contents/Introduction';
-import Skills from '../Contents/Skills';
-import Project from '../Contents/Project';
-import { projects } from '../Data/projectsData';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+import About from '../components/Main/Introduction';
+import Skills from '../components/Main/Skills';
+import Project from '../components/Main/Project';
+import { projects } from '../assets/data/projectsData';
 import * as Styled from './MainStyle';
 
 const Main: React.FC = () => {
@@ -28,11 +28,14 @@ const Main: React.FC = () => {
       <Header title="My Portfolio" />
       <Styled.MainContent>
         {/* 타이틀 섹션 */}
-        <Styled.Title scrollY={scrollY}>
+        <Styled.Title $scrollY={scrollY}>
           <div>Welcome to My Portfolio</div>
         </Styled.Title>
         {/* About 섹션 */}
-        <div id="paragraph1">
+        <div id="paragraph1" 
+        style={{  
+        backgroundColor: '#f9f9f9', 
+  }}>
           <About />
         </div>
         {/* Skills 섹션 */}

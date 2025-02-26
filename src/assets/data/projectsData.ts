@@ -1,8 +1,20 @@
-import stack from '../image/stack.png';
-import studyground from '../image/stydyground.png';
-import protfolio from '../image/protfolio.png';
-import miyh from '../image/miyh.png';
-import ttudu from '../image/ttudu.png';
+// 기존 개별 import 대신 이 코드를 사용합니다
+// 이미지를 동적으로 로드하는 함수
+// 수정된 이미지 로드 함수
+function getImageUrl(path: string): string {
+  try {
+    // 절대 경로 사용
+    return `/src/assets/pjt/${path}`;
+    
+    // 또는 import.meta.url 사용 시 올바른 경로 지정
+    // return new URL(`/src/assets/pjt/${path}`, import.meta.url).href;
+  } catch (error) {
+    console.error(`이미지 로드 실패: ${path}`, error);
+    return ''; 
+  }
+}
+
+
 
 export interface Project {
   title: string;
@@ -12,14 +24,39 @@ export interface Project {
   skills: string;
   githubLink: string;
   homeLink: string; // 홈 링크
-  imageUrl: string; // 이미지 경로
+  imageUrl: string[]; // 이미지 경로
   achievements: string[]; // 성과 및 배운 점 (선택적)
 }
 
 export const projects: Project[] = [
   {
+    title: 'Anti-ps',
+    date: '2025.01.06 ~ 2025.02.21 (FE 1명 / BE 1명 / EM 4명)',
+    description: `격리병동에서 사용하는 로봇과 환자 관리 서비스 입니다.`,
+    features: [ 
+      'roslibjs를 사용한 로봇 자율주행 및 수동조작',
+      'sse, pwa를 사용한 웹 및 모바일 푸시 실시간 알림',
+      'ux/ui 제작을 통한 사용자 편의 고려려',
+      'CRUD 구현을 통해 환자 데이터 관리리',
+    ],
+    skills: 'React + vite, TypeScript, PWA, ',
+    githubLink: 'https://github.com/kwonis/Anti-ps',
+    homeLink: 'https://www.antips.site/',
+    imageUrl: [
+      getImageUrl('antips/alarm.png'),
+      getImageUrl('antips/robot.png'),
+      getImageUrl('antips/list.png')
+    ],
+    achievements: [
+      'roslibjs 라이브러리 활용으로 로봇 제어 시스템 구현 및 WebSocket 통신 기술 습득',
+      'SSE와 PWA 기술 통합으로 실시간 알림 시스템 구축 및 오프라인 지원 기능 개발',
+      'React 컴포넌트 기반 아키텍처와 TypeScript 타입 안정성을 통한 코드 품질 향상',
+      '의료 환경에 특화된 UX/UI 설계로 사용자 만족도 증가 기대대'
+    ],
+  },
+  {
     title: 'Portfolio',
-    date: '2024.07 ~ 2025.01 (1인 개발)',
+    date: '2024.07 ~ 2025.01 (FE 1명)',
     description: `React와 TypeScript를 사용하여 프로젝트와 기술 스택을 효과적으로 정리한 개인 포트폴리오 웹사이트를 개발했습니다.`,
     features: [
       '개인을 위한 포트폴리오 작성 및 관리',
@@ -29,8 +66,13 @@ export const projects: Project[] = [
     ],
     skills: 'React, TypeScript, Styled-components',
     githubLink: 'https://github.com/kwonis/Protfolio',
-    homeLink: 'https://kwonis.netlify.app/',
-    imageUrl: protfolio, // Import된 이미지 사용
+    homeLink: 'https://kwonis.com',
+    imageUrl: [
+      getImageUrl('portfolio/main.png'),
+      getImageUrl('portfolio/about.png'),
+      getImageUrl('portfolio/skill.png'),
+      getImageUrl('portfolio/pjt.png'),
+    ],
     achievements: [
       'React와 TypeScript를 활용한 컴포넌트 기반 설계 경험',
       'Netlify를 활용한 배포 경험 및 CI/CD 파이프라인 이해도 향상',
@@ -39,7 +81,7 @@ export const projects: Project[] = [
   },
   {
     title: 'MIYH(매일영화)',
-    date: '2024.11.18 ~ 2024.11.26 (FE : 1명, BE : 1명)',
+    date: '2024.11.18 ~ 2024.11.26 (FE 1명 / BE 1명)',
     description: 'ChatGPT를 활용한 영화 추천 서비스와 나만의 영화 달력을 생성할 수 있는 웹 애플리케이션입니다.',
     features: [
       'ChatGPT를 사용해 날짜 및 사용자의 위치 정보를 기반으로 당일 영화 추천 제공',
@@ -51,7 +93,14 @@ export const projects: Project[] = [
     skills: 'Vue.js, JavaScript',
     githubLink: 'https://github.com/kwonis/MIYH',
     homeLink: '', // 홈 링크가 없는 경우 빈 문자열
-    imageUrl: miyh, // Import된 이미지 사용
+    imageUrl: [
+      getImageUrl('miyh/login.png'),
+      getImageUrl('miyh/recommend.png'),
+      getImageUrl('miyh/calendar.png'),
+      getImageUrl('miyh/search.png'),
+      getImageUrl('miyh/article.png'),
+      getImageUrl('miyh/mypage.png'),
+    ],
     achievements: [ 
       '삼성 청년 소프트웨어 아카데미 프로젝트 경연대회 🏆우수상 수상🏆',
       'Vue.js를 활용한 캘린더 UI 구성 및 동적 렌더링 구현 경험',
@@ -61,23 +110,27 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: '뚜두(Ttudu)',
-    date: '2024.10 ~ 2024.12 (FE : 다수)',
-    description: 'Todo 리스트를 공유하고 사용자 간 비교를 지원하는 협업 플랫폼입니다.',
-    features: [
+    title: 'Ttudo',
+    date: '2024.10. ~ 2024.12. (FE 1명 / BE 1명 / EM 4명)',
+    description: `Todo 리스트를 공유하고 사용자 간 비교를 지원하는 협업 플랫폼입니다.`,
+    features: [ 
       '카카오 및 네이버 SNS 로그인 연동 기능 구현',
       '마이페이지에서 개인 정보 관리 및 팔로우 기능 구현',
       '유저 전체 리스트 조회 및 팔로우/언팔로우 기능 제공',
     ],
-    skills: 'React, JavaScript',
+    skills: 'React + vite, JavaScript',
     githubLink: 'https://github.com/ssafy-ttudo/ttudo-fe',
-    homeLink: '', // 홈 링크가 없는 경우 빈 문자열
-    imageUrl: ttudu, // Import된 이미지 사용
+    homeLink: '',
+    imageUrl: [
+      getImageUrl('ttudo/login.png'),
+      getImageUrl('ttudo/mypage.png'),
+      getImageUrl('ttudo/usermodal.png')
+    ],
     achievements: [
+      'OAuth로부터 받은 access token과 서버에서 발급한 JWT token 간의 혼동 문제 식별',
       'OAuth를 활용한 카카오 및 네이버 SNS 로그인 연동 경험',
       'React로 마이페이지 UI 설계 및 사용자 정보 수정 기능 구현',
       '유저 전체 리스트 조회 및 팔로우 기능을 통해 데이터 상태 관리 학습',
-      '팀원들과의 협업을 통해 GitHub Flow와 코드 리뷰 프로세스 경험 축적',
     ],
   },
   {
@@ -93,28 +146,16 @@ export const projects: Project[] = [
     skills: 'React, JavaScript,Styled-components',
     githubLink: 'https://github.com/kwonis/seb45_main_016',
     homeLink: '',
-    imageUrl: studyground,
+    imageUrl: [
+      getImageUrl('studyground/login.png'),
+      getImageUrl('studyground/main.png'),
+      getImageUrl('studyground/search.png'),
+      getImageUrl('studyground/mypage.png'),
+    ],
     achievements: [
       'OAuth를 활용한 카카오 로그인 연동 경험',
       '검색 기능 개발을 통해 효율적인 데이터 필터링 로직 학습',
       '마이페이지 및 회원정보 수정 기능 구현으로 사용자 경험 향상',
-    ],
-  },
-  {
-    title: 'Stack Overflow 클론코딩',
-    date: '2023.08.04 ~ 2023.08.23 (FE 3명 / BE 3명)',
-    description: '기존 Stack Overflow의 주요 기능을 학습하고 구현하기 위해 진행한 클론 코딩 프로젝트입니다.',
-    features: [
-      '로그인 및 회원가입 기능 구현 (JWT 기반 인증)',
-      '상태 관리 및 UI 컴포넌트 설계 (React 활용)',
-    ],
-    skills: 'React.js, JavaScript, Styled-components',
-    githubLink: 'https://github.com/codestates-seb/seb45_pre_016',
-    homeLink: '', // 홈 링크가 없는 경우 빈 문자열
-    imageUrl: stack, // Import된 이미지 사용
-    achievements: [
-      'JWT 인증 구현 경험을 통해 보안 개념 강화',
-      '팀원들과의 협업을 통해 GitHub Flow에 대한 실무 경험 축적',
     ],
   },
 ];

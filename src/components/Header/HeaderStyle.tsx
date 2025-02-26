@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 
 interface HeaderProps {
-  isScrolled: boolean;
+  $isScrolled: boolean;
 }
 
 export const Header = styled.header<HeaderProps>`
-  background-color: ${({ isScrolled }) =>
-    isScrolled ? 'rgba(0, 0, 0, 0.9)' : 'rgba(0, 0, 0, 0.5)'};
+  background-color: ${({ $isScrolled }) =>
+    $isScrolled ? 'rgba(0, 0, 0, 0.9)' : 'rgba(0, 0, 0, 0.5)'};
   color: white;
   padding: 10px 0;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
-  box-shadow: ${({ isScrolled }) =>
-    isScrolled ? '0px 4px 6px rgba(0,0,0,0.3)' : 'none'};
+  box-shadow: ${({ $isScrolled }) =>
+    $isScrolled ? '0px 4px 6px rgba(0,0,0,0.3)' : 'none'};
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 `;
 

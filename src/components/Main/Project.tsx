@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa'; // GitHub 아이콘
 import { FiHome } from 'react-icons/fi'; // Home 아이콘
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import * as Styled from './ProjectStyle';
 
 interface ProjectProps {
@@ -11,7 +13,7 @@ interface ProjectProps {
   skills: string;
   githubLink: string;
   homeLink?: string; // 선택적 홈 링크
-  imageUrl: string;
+  imageUrl: string | string[]; // 단일 이미지 또는 이미지 배열
   status?: string; // 프로젝트 상태 (예: "완료", "진행 중")
   achievements?: string[]; // 성과 및 배운 점
 }
@@ -28,9 +30,31 @@ const Project: React.FC<ProjectProps> = ({
   status = "완료", // 기본값은 "완료"
   achievements = [], // 기본값은 빈 배열
 }) => {
+  // 이미지가 배열인지 확인
+  const images = Array.isArray(imageUrl) ? imageUrl : [imageUrl];
+
   return (
     <Styled.ProjectContainer>
-      <Styled.ProjectImage src={imageUrl} alt={`${title} 프로젝트 이미지`} />
+      <Styled.CarouselWrapper>
+        <Carousel 
+          showArrows={true} 
+          showStatus={false} 
+          showThumbs={false} 
+          infiniteLoop={true} 
+          autoPlay={false}
+          useKeyboardArrows={true}
+        >
+          {images.map((img, index) => (
+            <div className='pjt-image' key={index}>
+              <Styled.ProjectImage 
+                src={img} 
+                alt={`${title} 프로젝트 이미지 ${index + 1}`} 
+              />
+            </div>
+          ))}
+        </Carousel>
+      </Styled.CarouselWrapper>
+
       <Styled.ProjectContent>
         <Styled.ProjectTitle>{title}</Styled.ProjectTitle>
         <Styled.ProjectDate>{date}</Styled.ProjectDate>

@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Styled from './IntroductionStyle'; // 스타일을 별도 파일에서 가져오기
 // 이미지 불러오기
-import myImage from '../image/my.jpg';
+import myImage from '../../assets/my.jpg';
 
 const Introduction: React.FC = () => {
     return (

@@ -2,14 +2,14 @@ import React from 'react';
 import * as Styled from './SkillsStyle'; // 스타일을 별도 파일에서 가져오기
 
 // 이미지 파일 경로 지정
-import javascriptImage from '../image/js.png';
-import reactImage from '../image/react.png';
-import htmlImage from '../image/html.png';
-import cssImage from '../image/css.png';
-import typescriptImage from '../image/ts.png';
-import githubImage from '../image/github.png';
-import vueImage from '../image/vue.png';
-import pythonImage from '../image/python.png';
+import javascriptImage from '../../assets/skill/js.png';
+import reactImage from '../../assets/skill/react.png';
+import htmlImage from '../../assets/skill/html.png';
+import cssImage from '../../assets/skill/css.png';
+import typescriptImage from '../../assets/skill/ts.png';
+import githubImage from '../../assets/skill/github.png';
+import vueImage from '../../assets/skill/vue.png';
+import pythonImage from '../../assets/skill/python.png';
 
 const SkillsPage: React.FC = () => {
     // 스킬 데이터
