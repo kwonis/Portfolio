@@ -1,67 +1,132 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const SkillsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #edf2f7; /* 부드러운 파란색 배경 */
-  padding: 80px 20px; /* 여백 추가 */
+  background-color: #f0f5fa; /* 더 부드러운 배경색 */
+  padding: 100px 20px; /* 여백 확장 */
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+  }
 `;
 
 export const Skills = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 반응형 그리드 */
-  gap: 30px; /* 카드 간 간격 */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(180px, 1fr)
+  ); /* 그리드 크기 조정 */
+  gap: 35px; /* 카드 간 간격 */
   width: 100%;
   max-width: 1200px; /* 최대 너비 제한 */
+  margin-top: 20px;
 `;
 
 export const SkillCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; /* 이미지와 텍스트 간 간격 유지 */
-  padding: 20px;
-  background-color: #ffffff; /* 카드 배경색 */
-  border-radius: 12px; /* 둥근 모서리 */
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* 그림자 효과 */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: center;
+  padding: 30px 20px;
+  background-color: #ffffff;
+  border-radius: 16px; /* 더 둥근 모서리 */
+  box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  height: 180px; /* 카드 높이 통일 */
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #e1e8ed;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
 
   &:hover {
-    transform: translateY(-10px); /* 호버 시 위로 이동 */
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 16px; /* 호버 시 그림자 강화 */
-    background-color: #e2e8f0; /* 호버 시 밝은 파란색 배경 */
-    cursor: pointer; /* 마우스 포인터 변경 */
-    scale :1.2 ;
-}
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: rgba(32, 107, 196, 0.2) 0px 15px 30px;
+
+    &:after {
+      transform: scaleX(1);
+      background: linear-gradient(90deg, #3498db, #2980b9);
+    }
+  }
 `;
 
 export const SkillImage = styled.img`
-width :80px ; /* 이미지 너비 고정 */
-height :80px ; /* 이미지 높이 고정 */
-margin-bottom :10px ; /* 이미지와 텍스트 간 간격 설정 */
-object-fit :contain ; /* 비율을 유지하며 이미지가 잘리지 않도록 설정 */
+  width: 75px;
+  height: 75px;
+  margin-bottom: 18px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+
+  ${SkillCard}:hover & {
+    transform: scale(1.12);
+  }
 `;
 
 export const SkillName = styled.h3`
-font-size :16px ;
-font-weight:bold ;
-color:#333 ;
-text-align:center ;
-margin-top :10px ; /* 이미지와 텍스트 간 일정한 간격 유지 */
+  font-size: 17px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+  margin-top: 12px;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 8px;
 
-min-height :30px ;/* 스킬명 고정 높이 설정*/
-display:flex ;
-align-items:center ;
-justify-content:center ;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s ease;
+  }
 
+  ${SkillCard}:hover &:after {
+    width: 60%;
+  }
 `;
 
 export const Title = styled.h1`
-font-size :calc(20px +2 rem);
-font-weight:bold ;
-color:#2d3748 ;
-margin-bottom :40px ;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 15px;
+  text-align: center;
 
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border-radius: 2px;
+  }
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // 프로젝트 카드 컨테이너
 export const ProjectContainer = styled.div`
@@ -6,18 +6,24 @@ export const ProjectContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   border-radius: 16px;
-  padding: 30px;
-  width: 80%;
+  padding: 25px;
+  width: 90%;
+  max-width: 1200px;
   background-color: #ffffff;
-  margin: 20px auto;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 30px auto;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 10px 30px;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 20px;
-    background-color: #f7fafc;
-    cursor: pointer;
+    transform: translateY(-8px);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 35px;
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+
+  @media (max-width: 992px) {
+    width: 95%;
+    padding: 20px;
   }
 
   @media (max-width: 768px) {
@@ -28,133 +34,115 @@ export const ProjectContainer = styled.div`
   }
 `;
 
-// 캐러셀 래퍼 스타일 - 크기 조절 기능 추가
+// 캐러셀 래퍼 스타일
 export const CarouselWrapper = styled.div`
-  width: 50%;
-  height: 350px; /* 캐러셀 높이 고정 */
+  width: 45%;
+  height: 320px;
   margin: auto;
   position: relative;
-  
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 15px;
+
   .carousel {
-    height: 100%; /* 캐러셀이 래퍼 높이를 채우도록 설정 */
+    height: 100%;
+    border-radius: 12px;
   }
-  
+
   .carousel .slide {
-    background: transparent;
+    background: #f8f9fa;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%; /* 슬라이드가 캐러셀 높이를 채우도록 설정 */
+    height: 100%;
+    border-radius: 12px;
   }
-  
+
   .pjt-image {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+
   .carousel .control-arrow {
-    opacity: 0.8;
-    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 50%;
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 10px;
+    margin: 0 5px;
     transition: all 0.3s ease;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
-    
-    &:hover {
-      background: rgba(0, 0, 0, 0.5);
-    }
   }
-  
-  .carousel .control-prev.control-arrow {
-    left: 10px;
+
+  &:hover .control-arrow {
+    opacity: 0.9;
   }
-  
-  .carousel .control-next.control-arrow {
-    right: 10px;
+
+  .carousel .control-arrow:hover {
+    background: rgba(0, 0, 0, 0.6);
   }
-  
-  .carousel .control-prev.control-arrow:before {
-    border-right: 8px solid #fff;
-  }
-  
-  .carousel .control-next.control-arrow:before {
-    border-left: 8px solid #fff;
-  }
-  
+
   .carousel .control-dots {
-    margin: 10px 0;
-    
+    bottom: 15px;
+
     .dot {
       box-shadow: none;
-      background: #ccc;
-      opacity: 0.5;
-      
+      background: rgba(255, 255, 255, 0.7);
+      opacity: 0.7;
+      width: 8px;
+      height: 8px;
+
       &.selected {
-        background: #333;
+        background: #ffffff;
         opacity: 1;
+        width: 10px;
+        height: 10px;
       }
     }
   }
-  
+
+  @media (max-width: 992px) {
+    width: 48%;
+    height: 270px;
+  }
+
   @media (max-width: 768px) {
     width: 100%;
-    height: 250px; /* 모바일에서 높이 조정 */
+    height: 240px;
     margin-bottom: 20px;
   }
 `;
 
-// 이미지 스타일 - 크기 조절 기능 강화
+// 이미지 스타일
 export const ProjectImage = styled.img`
-  max-height: 300px; /* 최대 높이 설정 */
-  max-width: 100%; /* 최대 너비 설정 */
-  width: auto; /* 원본 비율 유지 */
-  height: auto; /* 원본 비율 유지 */
-  object-fit: contain; /* 이미지가 컨테이너에 맞게 조정되면서 비율 유지 */
-  display: block; /* 인라인 요소의 하단 여백 제거 */
-  margin: 0 auto; /* 중앙 정렬 */
-  
-  @media (max-width: 768px) {
-    max-height: 200px; /* 모바일에서 이미지 높이 조정 */
+  max-height: 280px;
+  max-width: 95%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
   }
-`;
 
-// 이미지 캡션 스타일
-export const ImageCaption = styled.p`
-  text-align: center;
-  font-size: 14px;
-  color: #666;
-  margin-top: 8px;
-`;
+  @media (max-width: 992px) {
+    max-height: 220px;
+  }
 
-// 이미지 인디케이터 스타일
-export const ImageIndicator = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  
-  button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ccc;
-    border: none;
-    margin: 0 5px;
-    padding: 0;
-    cursor: pointer;
-    
-    &.active {
-      background: #333;
-    }
+  @media (max-width: 768px) {
+    max-height: 200px;
   }
 `;
 
@@ -163,116 +151,223 @@ export const ProjectContent = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 0 0 30px;
-  width: 50%;
+  width: 55%;
+
+  @media (max-width: 992px) {
+    padding: 0 0 0 20px;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
     padding: 20px 0 0 0;
-    text-align: center;
   }
 `;
 
 // 프로젝트 제목 스타일
 export const ProjectTitle = styled.h3`
-  font-size: calc(18px + 1rem);
-  font-weight: bold;
-  color: #2d3748;
+  font-size: calc(18px + 0.5rem);
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 10px;
+  position: relative;
+  padding-bottom: 10px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 2px;
+  }
+
+  @media (max-width: 992px) {
+    font-size: calc(16px + 0.5rem);
+  }
 
   @media (max-width: 400px) {
-    font-size: small;
+    font-size: 20px;
   }
 `;
 
 // 날짜 스타일
 export const ProjectDate = styled.p`
-  font-size: 18px;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #4a5568;
+  font-weight: 500;
+
+  @media (max-width: 992px) {
+    font-size: 14px;
+  }
 `;
 
 // 설명 스타일
 export const ProjectDescription = styled.p`
-  margin: auto;
-  font-size: 20px;
+  margin: 0 0 15px 0;
+  font-size: 16px;
   line-height: 1.6;
+  color: #2d3748;
+  font-weight: 500;
+
+  @media (max-width: 992px) {
+    font-size: 15px;
+  }
 `;
 
 // 주요 기능 섹션
-export const ProjectFeatures = styled.div``;
+export const ProjectFeatures = styled.div`
+  margin-bottom: 15px;
+  background-color: #f8fafc;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+`;
 
 // 성과 섹션
 export const Achievements = styled.ul`
   list-style: none;
-  padding: 0;
-  margin: 10px auto;
-  width: fit-content;
-  min-width: 200px;
-  max-width: 600px;
+  padding: 12px 15px;
+  margin: 12px 0;
+  background-color: #f0f9ff;
+  border-radius: 8px;
+  border-left: 4px solid #0ea5e9;
 
   li {
     margin-bottom: 8px;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 1.5;
-    color: #333;
+    color: #334155;
+    position: relative;
+    padding-left: 20px;
+
+    &:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #0ea5e9;
+      font-weight: bold;
+    }
+
+    @media (max-width: 992px) {
+      font-size: 14px;
+    }
   }
 
   @media (max-width: 768px) {
     width: 100%;
-    text-align: center;
   }
 `;
 
 // 컨텐츠 제목
-export const Contitle = styled.h3``;
+export const Contitle = styled.h3`
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: #1e40af;
+  font-weight: 600;
+
+  @media (max-width: 992px) {
+    font-size: 16px;
+  }
+`;
 
 // 기능 목록
 export const Featurecontents = styled.ul`
   list-style: none;
   padding: 0;
-  margin: 10px auto;
-  width: fit-content;
-  min-width: 200px;
-  max-width: 600px;
+  margin: 8px 0;
 
   li {
     margin-bottom: 8px;
-    font-size: 20px;
+    font-size: 101x;
     line-height: 1.5;
-    color: #333;
+    color: #334155;
+    position: relative;
+    padding-left: 20px;
+
+    &:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    @media (max-width: 992px) {
+      font-size: 14px;
+    }
   }
 
   @media (max-width: 768px) {
     width: 100%;
-    text-align: center;
   }
 `;
 
 // 기술 스택
-export const ProjectSkills = styled.p``;
+export const ProjectSkills = styled.p`
+  font-size: 15px;
+  margin: 15px 0 10px 0;
+  padding: 10px 15px;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  color: #475569;
+  font-weight: 500;
+
+  @media (max-width: 992px) {
+    font-size: 14px;
+  }
+`;
 
 // 아이콘 컨테이너
-export const Icon = styled.div``;
+export const Icon = styled.div`
+  display: flex;
+  margin-top: 15px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+`;
 
 // GitHub 링크
 export const GitHubLink = styled.a`
   text-decoration: none;
-  font-size: 20px;
-  margin-right: 15px;
-  color: #000;
-  
+  margin-right: 20px;
+  color: #1e293b;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background-color: #f1f5f9;
+  border-radius: 50%;
+
   &:hover {
-    color: #0077b6;
-    text-decoration: underline;
+    color: #3b82f6;
+    transform: translateY(-3px);
+    background-color: #e2e8f0;
   }
 `;
 
 // 홈페이지 링크
 export const HomeLink = styled.a`
   text-decoration: none;
-  font-size: 20px;
-  margin-right: 15px;
-  color: #000;
-  
+  color: #1e293b;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background-color: #f1f5f9;
+  border-radius: 50%;
+
   &:hover {
-    color: #0077b6;
-    text-decoration: underline;
+    color: #3b82f6;
+    transform: translateY(-3px);
+    background-color: #e2e8f0;
   }
 `;

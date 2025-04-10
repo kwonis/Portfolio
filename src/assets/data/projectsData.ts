@@ -19,7 +19,12 @@ import studylogin from "../pjt/studyground/login.png";
 import studymain from "../pjt/studyground/main.png";
 import studysearch from "../pjt/studyground/search.png";
 import studymypage from "../pjt/studyground/mypage.png";
-
+import sosang1 from "../pjt/sosanggomin/salsedata.png";
+import sosang2 from "../pjt/sosanggomin/report_2.png";
+import sosang3 from "../pjt/sosanggomin/myreview.png";
+import sosang4 from "../pjt/sosanggomin/ana.png";
+import sosang5 from "../pjt/sosanggomin/recom.png";
+import sosang6 from "../pjt/sosanggomin/main.png";
 export interface Project {
   title: string;
   date: string;
@@ -33,6 +38,30 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: "소상고민",
+    date: "2025.03.04 ~ 2025.04.11 (FE 3명 / BE 3명)",
+    description: `"소상공인을 위한 데이터 분석 플랫폼 "소상고민"`,
+    features: [
+      "POS기 데이터 분석을 통한 인사이트 도출",
+      "리뷰 분석을 통한 활용 전략 제안",
+      "행정동 별 폴리곤 데이터를 활용한 지리적 상권 분석",
+      "Chart.js 기반 대시보드 시각화 시스템 구축",
+      "카카오맵 연동 동적 폴리곤 렌더링 구현",
+      "입지 추천 시 부드러운 폴리곤 전환 애니메이션",
+    ],
+    skills: "React + Vite, TypeScript, PWA, Tailwind CSS, Zustand",
+    githubLink: "https://github.com/kwonis/Sosanggomin",
+    homeLink: "https://dev.sosangomin.com/",
+    imageUrl: [sosang6, sosang4, sosang5, sosang1, sosang1, sosang2, sosang3],
+    achievements: [
+      "프로젝트 아키텍처 설계 : Vite 기반 모노레포 구성 및 ESLint/Prettier 통합",
+      "데이터 시각화 혁신 : Chart.js 커스터마이징을 통해 6종 분석 리포트 구현",
+      "지리정보 시스템 구현 : 카카오맵 API + GeoJSON 데이터 연동으로 행정동 경계 시각화",
+      "상태 관리 최적화 : Zustand를 활용한 전역 가게 데이터 관리 시스템 구축",
+      "UI/UX 개선 : CSS 모듈화 및 Web Animations API를 적용한 폴리곤 전환 효과",
+    ],
+  },
   {
     title: "Anti-ps",
     date: "2025.01.06 ~ 2025.02.21 (FE 1명 / BE 1명 / EM 4명)",
