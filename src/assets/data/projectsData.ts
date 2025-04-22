@@ -84,26 +84,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Portfolio",
-    date: "2024.07 ~ 2025.01 (FE 1명)",
-    description: `React와 TypeScript를 사용하여 프로젝트와 기술 스택을 효과적으로 정리한 개인 포트폴리오 웹사이트를 개발했습니다.`,
-    features: [
-      "개인을 위한 포트폴리오 작성 및 관리",
-      "프로젝트 사항 기입 및 관리 기능 제공",
-      "반응형 웹 디자인 적용으로 다양한 디바이스에서 최적화된 UI 제공",
-      "GitHub 및 배포 링크 연결로 프로젝트 접근성 강화",
-    ],
-    skills: "React, TypeScript, Styled-components",
-    githubLink: "https://github.com/kwonis/Protfolio",
-    homeLink: "https://kwonis.com",
-    imageUrl: [portmain, portabout, portskill, portpjt],
-    achievements: [
-      "React와 TypeScript를 활용한 컴포넌트 기반 설계 경험",
-      "Netlify를 활용한 배포 경험 및 CI/CD 파이프라인 이해도 향상",
-      "코드 구조화와 유지보수성을 고려한 설계로 개발 역량 강화",
-    ],
-  },
-  {
     title: "MIYH(매일영화)",
     date: "2024.11.18 ~ 2024.11.26 (FE 1명 / BE 1명)",
     description:

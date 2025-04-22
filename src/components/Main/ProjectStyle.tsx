@@ -37,7 +37,7 @@ export const ProjectContainer = styled.div`
 // 캐러셀 래퍼 스타일
 export const CarouselWrapper = styled.div`
   width: 45%;
-  height: 320px;
+  height: auto; // 고정 높이 대신 자동 높이 사용
   margin: auto;
   position: relative;
   border-radius: 12px;
@@ -45,24 +45,28 @@ export const CarouselWrapper = styled.div`
   box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 15px;
 
   .carousel {
-    height: 100%;
+    height: auto; // 높이를 자동으로 설정
     border-radius: 12px;
   }
 
   .carousel .slide {
-    background: #f8f9fa;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height: auto; // 높이를 자동으로 설정
+    padding: 0; // 패딩 제거
+    margin: 0; // 마진 제거
     border-radius: 12px;
   }
 
   .pjt-image {
-    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0; // 패딩 제거
+    margin: 0; // 마진 제거
   }
 
   .carousel .control-arrow {
@@ -128,8 +132,7 @@ export const ProjectImage = styled.img`
   width: auto;
   height: auto;
   object-fit: contain;
-  display: block;
-  margin: 0 auto;
+  margin: 0;
   border-radius: 8px;
   transition: transform 0.3s ease;
 
