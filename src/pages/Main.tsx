@@ -1,50 +1,60 @@
-import React, { useEffect, useState } from 'react';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
-import About from '../components/Main/Introduction';
-import Skills from '../components/Main/Skills';
-import Project from '../components/Main/Project';
-import { projects } from '../assets/data/projectsData';
-import * as Styled from './MainStyle';
+import React, { useEffect, useState } from "react";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import About from "../components/Main/Introduction";
+import Skills from "../components/Main/Skills";
+import Project from "../components/Main/Project";
+import { projects } from "../assets/data/projectsData";
 
 const Main: React.FC = () => {
-  const [scrollY, setScrollY] = useState(0); // 스크롤 위치 상태
+  const [scrollY, setScrollY] = useState(0);
 
-  // 스크롤 이벤트 핸들러
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY); // 현재 스크롤 위치 저장
+      setScrollY(window.scrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // 스크롤에 따른 투명도 계산
+  const titleOpacity = Math.max(1 - scrollY / window.innerHeight, 0);
+
   return (
-    <Styled.MainContainer>
-      <Header title="My Portfolio" />
-      <Styled.MainContent>
+    <div className="w-full m-0 p-0">
+      <Header />
+
+      <main className="w-full m-0 p-0">
         {/* 타이틀 섹션 */}
-        <Styled.Title $scrollY={scrollY}>
+        <section
+          className="
+            h-screen flex justify-center items-center 
+            bg-black text-white text-5xl m-0
+            transition-all duration-300 ease-in-out
+          "
+          style={{
+            opacity: titleOpacity,
+          }}
+        >
           <div>Welcome to My Portfolio</div>
-        </Styled.Title>
+        </section>
+
         {/* About 섹션 */}
-        <div id="paragraph1" 
-        style={{  
-        backgroundColor: '#f9f9f9', 
-  }}>
+        <section id="paragraph1" className="bg-gray-50">
           <About />
-        </div>
+        </section>
+
         {/* Skills 섹션 */}
-        <div id="paragraph2">
+        <section id="paragraph2">
           <Skills />
-        </div>
+        </section>
+
         {/* Projects 섹션 */}
-        <div id="paragraph3">
-          <Styled.SectionTitle>Projects</Styled.SectionTitle>
+        <section id="paragraph3">
+          <h1 className="text-4xl pt-24 pb-0 mb-10 text-center text-gray-800">
+            Projects
+          </h1>
           {projects.map((project, index) => (
             <Project
               key={index}
@@ -59,12 +69,11 @@ const Main: React.FC = () => {
               achievements={project.achievements}
             />
           ))}
-        </div>
-      </Styled.MainContent>
+        </section>
+      </main>
 
-      {/* Footer */}
       <Footer />
-    </Styled.MainContainer>
+    </div>
   );
 };
 

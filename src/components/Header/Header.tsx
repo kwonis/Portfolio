@@ -1,59 +1,87 @@
-import React, { useEffect, useState } from 'react';
-import * as HeaderStyle from './HeaderStyle';
+import React, { useEffect, useState } from "react";
 
-interface HeaderProps {
-  title: string;
-}
-
-const Header: React.FC<HeaderProps> = ({ title }) => {
+const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const targetElement = document.getElementById('paragraph1');
-
-      if (targetElement) {
-        const targetPosition = targetElement.offsetTop - 90; // 기준 위치 설정
-        if (scrollPosition >= targetPosition) {
-          setIsScrolled(true);
-        } else {
-          setIsScrolled(false);
-        }
-      }
+      setIsScrolled(scrollPosition > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToParagraph = (paragraphId: string) => {
     const element = document.getElementById(paragraphId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsScrolled(true); // 스크롤 발생 시 배경색 변경
+      const headerHeight = 70;
+      const elementPosition = element.offsetTop - headerHeight;
+
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth",
+      });
     }
   };
 
   return (
-    <HeaderStyle.Header $isScrolled={isScrolled}>
-      <HeaderStyle.Nav>
-        <ul>
-          <li>
-            <button onClick={() => scrollToParagraph('paragraph1')}>About</button>
+    <header
+      className={`
+        fixed top-0 w-full z-[1000] py-2.5 text-white
+        transition-all duration-300 ease-in-out
+        ${
+          isScrolled
+            ? "bg-black/90 shadow-[0px_4px_6px_rgba(0,0,0,0.3)]"
+            : "bg-black/50 shadow-none"
+        }
+      `}
+    >
+      <nav>
+        <ul className="list-none p-0 m-0 flex justify-center">
+          <li className="mx-[15px]">
+            <button
+              onClick={() => scrollToParagraph("paragraph1")}
+              className="
+                text-white bg-transparent border-none text-lg font-bold 
+                p-2.5 cursor-pointer rounded-[5px]
+                transition-all duration-300 ease-in-out
+                hover:bg-white/20 hover:text-[#f8d64e] hover:scale-110
+              "
+            >
+              About
+            </button>
           </li>
-          <li>
-            <button onClick={() => scrollToParagraph('paragraph2')}>Skills</button>
+          <li className="mx-[15px]">
+            <button
+              onClick={() => scrollToParagraph("paragraph2")}
+              className="
+                text-white bg-transparent border-none text-lg font-bold 
+                p-2.5 cursor-pointer rounded-[5px]
+                transition-all duration-300 ease-in-out
+                hover:bg-white/20 hover:text-[#f8d64e] hover:scale-110
+              "
+            >
+              Skills
+            </button>
           </li>
-          <li>
-            <button onClick={() => scrollToParagraph('paragraph3')}>Projects</button>
+          <li className="mx-[15px]">
+            <button
+              onClick={() => scrollToParagraph("paragraph3")}
+              className="
+                text-white bg-transparent border-none text-lg font-bold 
+                p-2.5 cursor-pointer rounded-[5px]
+                transition-all duration-300 ease-in-out
+                hover:bg-white/20 hover:text-[#f8d64e] hover:scale-110
+              "
+            >
+              Projects
+            </button>
           </li>
         </ul>
-      </HeaderStyle.Nav>
-    </HeaderStyle.Header>
+      </nav>
+    </header>
   );
 };
 

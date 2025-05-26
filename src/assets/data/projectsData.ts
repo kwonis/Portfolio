@@ -25,6 +25,12 @@ import sosang3 from "../pjt/sosanggomin/myreview.png";
 import sosang4 from "../pjt/sosanggomin/ana.png";
 import sosang5 from "../pjt/sosanggomin/recom.png";
 import sosang6 from "../pjt/sosanggomin/main.png";
+import todak1 from "../pjt/todak/todak1.png";
+import todak2 from "../pjt/todak/todak2.png";
+import todak3 from "../pjt/todak/todak3.png";
+import todak4 from "../pjt/todak/todak4.png";
+import todak5 from "../pjt/todak/todak5.png";
+
 export interface Project {
   title: string;
   date: string;
@@ -39,6 +45,29 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "토닥",
+    date: "2025.04.14 ~ 2025.05.22 (FE 1명 / BE 3명 / Mobile 2명)",
+    description: `"경계선 지능인과 보호자를 위한 AI통합 플랫폼"`,
+    features: [
+      "카카오 주소검색 api를 사용한 주소 완성",
+      "캘린더를 사용한 일정 등록 및 확인",
+      "",
+      "Chart.js 기반 대시보드 시각화 시스템 구축",
+    ],
+    skills: "React + Vite, TypeScript,Tailwind CSS",
+    githubLink: "https://github.com/kwonis/Sosanggomin",
+    homeLink: "",
+    imageUrl: [todak1, todak2, todak3, todak4, todak5],
+    achievements: [
+      "프로젝트 아키텍처 설계 : Vite 기반 모노레포 구성 및 ESLint/Prettier 통합",
+      "데이터 시각화 혁신 : Chart.js 커스터마이징을 통해 6종 분석 리포트 구현",
+      "지리정보 시스템 구현 : 카카오맵 API + GeoJSON 데이터 연동으로 행정동 경계 시각화",
+      "상태 관리 최적화 : Zustand를 활용한 전역 가게 데이터 관리 시스템 구축",
+      "UI/UX 개선 : CSS 모듈화 및 Web Animations API를 적용한 폴리곤 전환 효과",
+    ],
+  },
+
+  {
     title: "소상고민",
     date: "2025.03.04 ~ 2025.04.11 (FE 3명 / BE 3명)",
     description: `"소상공인을 위한 데이터 분석 플랫폼 "소상고민"`,
@@ -52,7 +81,7 @@ export const projects: Project[] = [
     ],
     skills: "React + Vite, TypeScript, PWA, Tailwind CSS, Zustand",
     githubLink: "https://github.com/kwonis/Sosanggomin",
-    homeLink: "https://dev.sosangomin.com/",
+    homeLink: "",
     imageUrl: [sosang6, sosang4, sosang5, sosang1, sosang1, sosang2, sosang3],
     achievements: [
       "프로젝트 아키텍처 설계 : Vite 기반 모노레포 구성 및 ESLint/Prettier 통합",

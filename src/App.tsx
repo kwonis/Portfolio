@@ -1,14 +1,14 @@
 // App.tsx
 
-import React from 'react';
-import './App.css';
-import Main from './pages/Main'; // Main 컴포넌트를 불러옵니다.
+import React from "react";
+import "./App.css";
+import Main from "./pages/Main"; // Main 컴포넌트를 불러옵니다.
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <Main />
+        <Main />
       </header>
     </div>
   );
