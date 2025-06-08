@@ -1,10 +1,6 @@
 import antialarm from "../pjt/antips/alarm.png";
 import antirobot from "../pjt/antips/robot.png";
 import antilist from "../pjt/antips/list.png";
-import portmain from "../pjt/portfolio/main.png";
-import portabout from "../pjt/portfolio/about.png";
-import portskill from "../pjt/portfolio/skill.png";
-import portpjt from "../pjt/portfolio/pjt.png";
 import miyhlogin from "../pjt/miyh/login.png";
 import miyhrecommend from "../pjt/miyh/recommend.png";
 import miyhcalendar from "../pjt/miyh/calendar.png";
@@ -51,22 +47,20 @@ export const projects: Project[] = [
     features: [
       "카카오 주소검색 api를 사용한 주소 완성",
       "캘린더를 사용한 일정 등록 및 확인",
-      "",
       "Chart.js 기반 대시보드 시각화 시스템 구축",
     ],
     skills: "React + Vite, TypeScript,Tailwind CSS",
     githubLink: "https://github.com/kwonis/Sosanggomin",
     homeLink: "",
     imageUrl: [todak1, todak2, todak3, todak4, todak5],
-    achievements: [
-      "프로젝트 아키텍처 설계 : Vite 기반 모노레포 구성 및 ESLint/Prettier 통합",
-      "데이터 시각화 혁신 : Chart.js 커스터마이징을 통해 6종 분석 리포트 구현",
-      "지리정보 시스템 구현 : 카카오맵 API + GeoJSON 데이터 연동으로 행정동 경계 시각화",
-      "상태 관리 최적화 : Zustand를 활용한 전역 가게 데이터 관리 시스템 구축",
-      "UI/UX 개선 : CSS 모듈화 및 Web Animations API를 적용한 폴리곤 전환 효과",
-    ],
-  },
 
+ achievements: [
+  "프로젝트 아키텍처 설계 : Vite 기반 모노레포 구성 및 ESLint/Prettier 통합",
+  "초기 페이지 진입 시 중요한 이미지를 우선 로드하고, 나머지는 지연 로딩 처리하여 렌더링 타이밍을 제어함",
+  "Chart.js 커스터마이징 과정에서 사용자 피드백을 반영하여, 차트 색상 및 툴팁 가독성을 개선하고 모바일 환경에서도 동일한 정보 전달이 가능하도록 반응형 레이아웃 적용",
+  "텍스트 중심의 분석 보고서에서는 정보량이 많은 구조적 한계를 해소하기 위해, 각 파트를 시각적으로 구분할 수 있도록 색상과 이모지를 적절히 활용하여 가독성과 정보 탐색성을 향상시킴"
+],
+  },
   {
     title: "소상고민",
     date: "2025.03.04 ~ 2025.04.11 (FE 3명 / BE 3명)",
