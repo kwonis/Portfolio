@@ -11,10 +11,6 @@ import miyhlocation from "../pjt/miyh/location.png";
 import ttudologin from "../pjt/ttudo/login.png";
 import ttudomypage from "../pjt/ttudo/mypage.png";
 import ttudousermodal from "../pjt/ttudo/usermodal.png";
-import studylogin from "../pjt/studyground/login.png";
-import studymain from "../pjt/studyground/main.png";
-import studysearch from "../pjt/studyground/search.png";
-import studymypage from "../pjt/studyground/mypage.png";
 import sosang1 from "../pjt/sosanggomin/salsedata.png";
 import sosang2 from "../pjt/sosanggomin/report_2.png";
 import sosang3 from "../pjt/sosanggomin/myreview.png";
@@ -40,143 +36,134 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  {
-    title: "토닥",
-    date: "2025.04.14 ~ 2025.05.22 (FE 1명 / BE 3명 / Mobile 2명)",
-    description: `"경계선 지능인과 보호자를 위한 AI통합 플랫폼"`,
-    features: [
-      "카카오 주소검색 api를 사용한 주소 완성",
-      "캘린더를 사용한 일정 등록 및 확인",
-      "Chart.js 기반 대시보드 시각화 시스템 구축",
-    ],
-    skills: "React + Vite, TypeScript,Tailwind CSS",
-    githubLink: "https://github.com/kwonis/Sosanggomin",
-    homeLink: "",
-    imageUrl: [todak1, todak2, todak3, todak4, todak5],
-
- achievements: [
-  "프로젝트 아키텍처 설계 : Vite 기반 모노레포 구성 및 ESLint/Prettier 통합",
-  "초기 페이지 진입 시 중요한 이미지를 우선 로드하고, 나머지는 지연 로딩 처리하여 렌더링 타이밍을 제어함",
-  "Chart.js 커스터마이징 과정에서 사용자 피드백을 반영하여, 차트 색상 및 툴팁 가독성을 개선하고 모바일 환경에서도 동일한 정보 전달이 가능하도록 반응형 레이아웃 적용",
-  "텍스트 중심의 분석 보고서에서는 정보량이 많은 구조적 한계를 해소하기 위해, 각 파트를 시각적으로 구분할 수 있도록 색상과 이모지를 적절히 활용하여 가독성과 정보 탐색성을 향상시킴"
-],
-  },
-  {
-    title: "소상고민",
-    date: "2025.03.04 ~ 2025.04.11 (FE 3명 / BE 3명)",
-    description: `"소상공인을 위한 데이터 분석 플랫폼 "소상고민"`,
-    features: [
-      "POS기 데이터 분석을 통한 인사이트 도출",
-      "리뷰 분석을 통한 활용 전략 제안",
-      "행정동 별 폴리곤 데이터를 활용한 지리적 상권 분석",
-      "Chart.js 기반 대시보드 시각화 시스템 구축",
-      "카카오맵 연동 동적 폴리곤 렌더링 구현",
-      "입지 추천 시 부드러운 폴리곤 전환 애니메이션",
-    ],
-    skills: "React + Vite, TypeScript, PWA, Tailwind CSS, Zustand",
-    githubLink: "https://github.com/kwonis/Sosanggomin",
-    homeLink: "",
-    imageUrl: [sosang6, sosang4, sosang5, sosang1, sosang1, sosang2, sosang3],
-    achievements: [
-      "프로젝트 아키텍처 설계 : Vite 기반 모노레포 구성 및 ESLint/Prettier 통합",
-      "데이터 시각화 혁신 : Chart.js 커스터마이징을 통해 6종 분석 리포트 구현",
-      "지리정보 시스템 구현 : 카카오맵 API + GeoJSON 데이터 연동으로 행정동 경계 시각화",
-      "상태 관리 최적화 : Zustand를 활용한 전역 가게 데이터 관리 시스템 구축",
-      "UI/UX 개선 : CSS 모듈화 및 Web Animations API를 적용한 폴리곤 전환 효과",
-    ],
-  },
-  {
-    title: "Anti-ps",
-    date: "2025.01.06 ~ 2025.02.21 (FE 1명 / BE 1명 / EM 4명)",
-    description: `격리병동에서 사용하는 로봇과 환자 관리 서비스입니다.`,
-    features: [
-      "roslibjs를 사용한 로봇 자율주행 및 수동조작",
-      "sse, pwa를 사용한 웹 및 모바일 푸시 실시간 알림",
-      "ux/ui 제작을 통한 사용자 편의 고려",
-      "CRUD 구현을 통해 환자 데이터 관리",
-    ],
-    skills: "React + vite, TypeScript, PWA ",
-    githubLink: "https://github.com/kwonis/Anti-ps",
-    homeLink: "https://www.antips.site/",
-    imageUrl: [antialarm, antirobot, antilist],
-    achievements: [
-      "roslibjs 라이브러리 활용으로 로봇 제어 시스템 구현 및 WebSocket 통신 기술 습득",
-      "SSE와 PWA 기술 통합으로 실시간 알림 시스템 구축 및 오프라인 지원 기능 개발",
-      "React 컴포넌트 기반 아키텍처와 TypeScript 타입 안정성을 통한 코드 품질 향상",
-      "의료 환경에 특화된 UX/UI 설계로 사용자 만족도 증가 기대",
-    ],
-  },
-  {
-    title: "MIYH(매일영화)",
-    date: "2024.11.18 ~ 2024.11.26 (FE 1명 / BE 1명)",
-    description:
-      "ChatGPT를 활용한 영화 추천 서비스와 나만의 영화 달력을 생성할 수 있는 웹 애플리케이션입니다.",
-    features: [
-      "ChatGPT를 사용해 날짜 및 사용자의 위치 정보를 기반으로 당일 영화 추천 제공",
-      "회원 서비스를 통해 자신만의 영화 달력 생성 기능 구현",
-      "마이페이지에서 개인 영화 목록 관리 및 게시글 작성 기능 제공",
-      "영화 캘린더 UI 구성 및 동적 렌더링 구현",
-      "위도와 경도 데이터를 활용한 사용자 위치 기반 영화 추천",
-    ],
-    skills: "Vue.js, JavaScript",
-    githubLink: "https://github.com/kwonis/MIYH",
-    homeLink: "", // 홈 링크가 없는 경우 빈 문자열
-    imageUrl: [
-      miyhlogin,
-      miyhrecommend,
-      miyhcalendar,
-      miyhsearch,
-      miyharticle,
-      miyhmypage,
-      miyhlocation,
-    ],
-    achievements: [
-      "삼성 청년 소프트웨어 아카데미 프로젝트 경연대회 🏆우수상 수상🏆",
-      "Vue.js를 활용한 캘린더 UI 구성 및 동적 렌더링 구현 경험",
-      "위치 정보(위도·경도)를 활용한 사용자 맞춤형 추천 로직 설계 및 구현",
-      "마이페이지와 게시글 관리 기능을 통해 사용자 중심의 인터페이스 설계 경험 강화",
-      "ChatGPT API와의 데이터 통신을 통해 비동기 처리 및 API 활용 능력 향상",
-    ],
-  },
-  {
-    title: "Ttudo",
-    date: "2024.10. ~ 2024.12. (FE 1명 / BE 1명 / EM 4명)",
-    description: `Todo 리스트를 공유하고 사용자 간 비교를 지원하는 협업 플랫폼입니다.`,
-    features: [
-      "카카오 및 네이버 SNS 로그인 연동 기능 구현",
-      "마이페이지에서 개인 정보 관리 및 팔로우 기능 구현",
-      "유저 전체 리스트 조회 및 팔로우/언팔로우 기능 제공",
-    ],
-    skills: "React + vite, JavaScript",
-    githubLink: "https://github.com/ssafy-ttudo/ttudo-fe",
-    homeLink: "",
-    imageUrl: [ttudologin, ttudomypage, ttudousermodal],
-    achievements: [
-      "OAuth로부터 받은 access token과 서버에서 발급한 JWT token 간의 혼동 문제 식별",
-      "OAuth를 활용한 카카오 및 네이버 SNS 로그인 연동 경험",
-      "React로 마이페이지 UI 설계 및 사용자 정보 수정 기능 구현",
-      "유저 전체 리스트 조회 및 팔로우 기능을 통해 데이터 상태 관리 학습",
-    ],
-  },
-  {
-    title: "StudyGround",
-    date: "2023.08.24 ~ 2023.09.18 (FE 2명 / BE 4명 / 디자인 1명)",
-    description:
-      "자격증 정보를 한눈에 확인하고, 원하는 자격증을 북마크할 수 있는 서비스를 제공하는 프로젝트입니다.",
-    features: [
-      "카카오 로그인 및 서비스 내 로그인/회원가입",
-      "자격증 북마크, 게시글 작성 및 댓글 기능 구현",
-      "검색 기능 개발 및 필터링 기능 추가",
-      "마이페이지 및 회원정보 수정 기능 구현",
-    ],
-    skills: "React, JavaScript,Styled-components",
-    githubLink: "https://github.com/kwonis/seb45_main_016",
-    homeLink: "",
-    imageUrl: [studylogin, studymain, studysearch, studymypage],
-    achievements: [
-      "OAuth를 활용한 카카오 로그인 연동 경험",
-      "검색 기능 개발을 통해 효율적인 데이터 필터링 로직 학습",
-      "마이페이지 및 회원정보 수정 기능 구현으로 사용자 경험 향상",
-    ],
-  },
+{
+  title: "토닥",
+  date: "2024.04.14 ~ 2024.05.22 (FE 1명 / BE 3명 / Mobile 2명)",
+  description: "경계선 지능인과 보호자를 위한 AI 통합 플랫폼",
+  features: [
+    "전체 학생 조회 및 개별 특이사항 정보 관리",
+    "학생별 캘린더를 통한 일정 확인 및 등록",
+    "생성형 AI를 활용한 맞춤형 미션 생성 및 진행상황 확인",
+    "업체별 레시피 제작 및 관리 시스템",
+    "학생 진행상황 모니터링 대시보드"
+  ],
+  skills: "React + Vite, TypeScript, Tailwind CSS",
+  githubLink: "https://github.com/TodakService/Todak",
+  homeLink: "",
+  imageUrl: [todak1, todak2, todak3, todak4, todak5],
+  achievements: [
+    "삼성 청년 소프트웨어 AI 아카데미 프로젝트 발표회 🏆전체 3등 수상🏆",
+    "이미지와 이모티콘을 활용한 시각적 UI 설계로 대량 정보의 가독성 향상 및 관리자 피로도 감소",
+    "Calendar 컴포넌트를 활용한 직관적인 일정 관리 시스템 구현으로 사용자 편의성 증대",
+    "카카오 주소 API 연동 및 전화번호 유효성 검사 규칙 적용을 통한 데이터 입력 오류율 최소화",
+    "Lazy Loading 기법 적용으로 레시피 단계 전환 시 렌더링 시간 약 1초 단축 및 사용자 경험 개선",
+    "React + Vite 환경에서 TypeScript 기반 타입 안전성 확보 및 개발 생산성 향상",
+    "Tailwind CSS 활용으로 일관된 디자인 시스템 구축 및 반응형 레이아웃 구현"
+  ]
+},
+ {
+  title: "소상고민",
+  date: "2024.03.04 ~ 2024.04.11 (FE 3명 / BE 3명)",
+  description: "소상공인을 위한 데이터 분석 플랫폼 소상고민",
+  features: [
+    "가게명 입력을 통한 가게 등록 및 대표 가게 설정",
+    "서울시 각 동별 상권분석 전체 및 상세 정보 제공",
+    "선택 조건에 따른 맞춤형 입지 추천 서비스",
+    "소상공인 대상 맞춤 뉴스 및 커뮤니티 소통 공간",
+    "지도 기반 상권 데이터 시각화 및 분석 리포트"
+  ],
+  skills: "React + Vite, TypeScript, PWA, Tailwind CSS, Zustand",
+  githubLink: "https://github.com/kwonis/Sosanggomin",
+  homeLink: "",
+  imageUrl: [sosang6, sosang4, sosang5, sosang1, sosang1, sosang2, sosang3],
+  achievements: [
+    "삼성 청년 소프트웨어 AI 아카데미 프로젝트 경연대회 빅데이터 부분 🏆1등 수상🏆",
+    "카카오맵 API 연동을 통한 직관적인 가게 등록 시스템 구현으로 사용자 편의성 향상",
+    "GeoJSON 폴리곤 기능을 활용한 지도 기반 인구 분포 시각화 및 상권 분석 기능 개발",
+    "Chart.js를 활용한 동별 상세 모달 구현으로 데이터 시각화 품질 향상 및 사용자 이해도 증대",
+    "실시간 조건 변경에 따른 동적 폴리곤 생성 기능으로 페이지 전환 없는 즉시 결과 확인 구현",
+    "PWA 기술 적용으로 모바일 환경에서의 앱 수준 사용자 경험 제공",
+    "Zustand 상태 관리 라이브러리를 활용한 효율적인 전역 상태 관리 및 성능 최적화"
+  ]
+},
+{
+  title: "Anti-ps",
+  date: "2024.01.06 ~ 2024.02.21 (FE 1명 / BE 1명 / EM 4명)",
+  description: "격리병동에서 사용하는 로봇과 환자 관리 서비스",
+  features: [
+    "로봇 실시간 카메라 피드 및 현재 상황 모니터링 대시보드",
+    "IoT 기기 연동 실시간 알림 확인 시스템",
+    "환자 데이터 및 의료 기록 관리 페이지",
+    "로봇 원격 제어 및 자율 주행 기능",
+    "격리병동 내 환경 모니터링 및 상태 관리"
+  ],
+  skills: "React + Vite, TypeScript, PWA",
+  githubLink: "https://github.com/kwonis/Anti-ps",
+  homeLink: "",
+  imageUrl: [antialarm, antirobot, antilist],
+  achievements: [
+    "roslibjs 라이브러리 활용으로 로봇 제어 시스템 구현 및 WebSocket 통신 기술 습득",
+    "SSE(Server-Sent Events)와 PWA 기술 통합으로 실시간 알림 시스템 구축 및 오프라인 지원 기능 개발",
+    "React 컴포넌트 기반 아키텍처와 TypeScript 타입 안정성을 통한 코드 품질 향상 및 유지보수성 증대",
+    "의료 환경 특화 UX/UI 설계로 직관적인 사용자 인터페이스 구현 및 업무 효율성 향상",
+    "PWA 기술 적용으로 모바일 환경에서의 앱 수준 사용자 경험 제공 및 오프라인 접근성 확보",
+    "실시간 데이터 스트리밍 및 상태 관리 최적화를 통한 시스템 안정성 향상"
+  ]
+},
+ {
+  title: "MIYH(매일영화)",
+  date: "2024.11.18 ~ 2024.11.26 (FE 1명 / BE 1명)",
+  description: "생성형 AI를 활용한 영화 추천 서비스와 나만의 영화 달력을 생성할 수 있는 웹 애플리케이션",
+  features: [
+    "오늘의 추천 영화 확인 및 월별 영화 달력 기능",
+    "영화 검색을 통한 전체 영화 목록 및 상세 정보 제공",
+    "사용자 간 소통을 위한 커뮤니티 게시판",
+    "개인 맞춤형 영화 추천 서비스",
+    "마이페이지를 통한 개인 영화 기록 관리"
+  ],
+  skills: "Vue.js, JavaScript",
+  githubLink: "https://github.com/kwonis/MIYH",
+  homeLink: "",
+  imageUrl: [
+    miyhlogin,
+    miyhrecommend,
+    miyhcalendar,
+    miyhsearch,
+    miyharticle,
+    miyhmypage,
+    miyhlocation,
+  ],
+  achievements: [
+    "삼성 청년 소프트웨어 아카데미 프로젝트 경연대회 🏆우수상 수상🏆",
+    "Vue.js를 활용한 캘린더 UI 구성 및 동적 렌더링 구현으로 사용자 경험 향상",
+    "위치 정보(위도·경도) 기반 사용자 맞춤형 추천 로직 설계 및 구현",
+    "ChatGPT API 연동을 통한 비동기 처리 및 AI 기반 추천 시스템 개발",
+    "마이페이지와 게시글 관리 기능을 통한 사용자 중심 인터페이스 설계 경험 강화",
+    "Vue.js 프레임워크를 활용한 컴포넌트 기반 개발 및 상태 관리 최적화"
+  ]
+},
+ {
+  title: "Ttudo",
+  date: "2024.10.01 ~ 2024.12.31 (FE 1명 / BE 1명 / EM 4명)",
+  description: "Todo 리스트를 공유하고 사용자 간 비교를 지원하는 협업 플랫폼",
+  features: [
+    "카테고리별 Todo 내용 확인 및 관리",
+    "개인 정보 관리 및 팔로우 현황 확인",
+    "사용자 전체 리스트 조회 및 팔로우/언팔로우",
+    "카카오 및 네이버 SNS 로그인 기능",
+    "사용자 간 Todo 진행 상황 비교 및 공유"
+  ],
+  skills: "React + Vite, JavaScript",
+  githubLink: "https://github.com/ssafy-ttudo/ttudo-fe",
+  homeLink: "",
+  imageUrl: [ttudologin, ttudomypage, ttudousermodal],
+  achievements: [
+    "OAuth access token과 서버 발급 JWT token 간의 혼동 문제 식별 및 해결을 통한 인증 시스템 이해도 향상",
+    "카카오 및 네이버 OAuth 2.0 연동을 통한 소셜 로그인 시스템 구현 경험 습득",
+    "React를 활용한 마이페이지 UI 설계 및 사용자 정보 수정 기능 구현으로 사용자 경험 향상",
+    "사용자 리스트 조회 및 팔로우 기능을 통한 React 상태 관리 및 API 통신 최적화",
+    "React + Vite 환경에서의 빠른 개발 환경 구축 및 개발 생산성 향상 경험",
+    "컴포넌트 기반 아키텍처를 통한 재사용 가능한 UI 요소 설계 및 구현"
+  ]
+}
 ];

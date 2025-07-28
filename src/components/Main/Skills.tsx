@@ -9,6 +9,8 @@ import typescriptImage from "../../assets/skill/ts.png";
 import githubImage from "../../assets/skill/github.png";
 import vueImage from "../../assets/skill/vue.png";
 import pythonImage from "../../assets/skill/python.png";
+import tailwindcssImage from "../../assets/skill/tailwindcss.svg";
+import jiraImage from "../../assets/skill/jira.png";
 
 const SkillsPage: React.FC = () => {
   const skills = [
@@ -49,6 +51,12 @@ const SkillsPage: React.FC = () => {
       description: "Vue.js 프레임워크를 활용한 반응형 웹 애플리케이션 개발"
     },
     { 
+      name: "Tailwind CSS", 
+      image: tailwindcssImage, 
+      category: "frontend",
+      description: "유틸리티 기반 CSS 프레임워크로 빠른 UI 개발과 일관된 디자인 시스템 구축"
+    },
+    { 
       name: "Python", 
       image: pythonImage, 
       category: "backend",
@@ -60,13 +68,19 @@ const SkillsPage: React.FC = () => {
       category: "tools",
       description: "버전 관리와 협업을 위한 Git 워크플로우 및 CI/CD 구축"
     },
+    { 
+      name: "Jira", 
+      image: jiraImage, 
+      category: "tools",
+      description: "애자일 프로젝트 관리와 이슈 트래킹을 통한 효율적인 팀 협업"
+    },
   ];
 
-return (
+  return (
     <div
       className="
         flex flex-col items-center justify-center 
-        py-10 px-8 relative overflow-hidden
+        py-24 px-8 relative overflow-hidden
       "
     >
       {/* 배경 장식 */}
@@ -93,7 +107,7 @@ return (
       <div className="w-full max-w-7xl">
         <div
           className="
-          grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
+          grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5
           gap-6 md:gap-8 w-full z-10
         "
         >

@@ -70,18 +70,22 @@ const Introduction: React.FC = () => {
     },
     {
       title: "삼성 청년 소프트웨어 아카데미 12기(SSAFY)",
-      period: "(2024.07 ~ )",
+      period: "(2024.07 ~ 2025.07)",
     },
   ];
 
   const awards = [
+        {
+      title: "SSAFY 전체 최종 발표회 3등",
+      description: "토닥 프로젝트로 수상",
+    },
+        {
+      title: "SSAFY 특화프로젝트 경연대회 우수상 1등(빅데이터 부분)",
+      description: "소상고민 프로젝트로 수상",
+    },
     {
       title: "SSAFY 프로젝트 경연대회 우수상",
       description: "MIYH(매일영화) 프로젝트로 수상",
-    },
-    {
-      title: "다양한 프로젝트 완성",
-      description: "React, TypeScript 기반 포트폴리오 구축",
     },
   ];
 
@@ -190,31 +194,7 @@ const Introduction: React.FC = () => {
               </div>
             </div>
 
-            {/* 추가 정보 섹션 */}
-            <div>
-              <SectionTitle>CONTACT INFO</SectionTitle>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">📧</span>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500">Email</p>
-                    <p className="text-sm font-medium text-gray-900">your.email@example.com</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <div className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">🔗</span>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500">GitHub</p>
-                    <p className="text-sm font-medium text-gray-900">github.com/kwonis</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
