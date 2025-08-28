@@ -85,15 +85,15 @@ const aboutMeItems = [
 
   const awards = [
     {
-      title: "SSAFY 전체 최종 발표회 3등",
+      title: "SSAFY AI 플랫폼 우수상 수상 및 발표회 3등",
       description: "토닥 프로젝트로 수상",
     },
     {
-      title: "SSAFY 특화프로젝트 경연대회 우수상 1등(빅데이터 부분)",
+      title: "SSAFY 빅데이터 추천 부문 우수상 수상",
       description: "소상고민 프로젝트로 수상",
     },
     {
-      title: "SSAFY 프로젝트 경연대회 우수상",
+      title: "SSAFY AI 추천 부문 우수상",
       description: "MIYH(매일영화) 프로젝트로 수상",
     },
   ];
