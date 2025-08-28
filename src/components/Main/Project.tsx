@@ -10,6 +10,7 @@ import { FiHome, FiUsers, FiCalendar, FiCode } from "react-icons/fi";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+
 interface ProjectProps {
   title: string;
   date: string;
@@ -23,6 +24,7 @@ interface ProjectProps {
   achievements?: string[];
   teamSize?: string;
 }
+
 
 const Project: React.FC<ProjectProps> = ({
   title,
@@ -41,11 +43,13 @@ const Project: React.FC<ProjectProps> = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+
   // 모달 열기 함수
   const openModal = () => {
     setIsModalOpen(true);
     document.body.style.overflow = "hidden";
   };
+
 
   // 모달 닫기 함수
   const closeModal = () => {
@@ -54,6 +58,7 @@ const Project: React.FC<ProjectProps> = ({
     document.body.style.overflow = "unset";
   };
 
+
   // GitHub 링크 열기
   const openGitHub = () => {
     if (githubLink && githubLink.trim() !== "") {
@@ -61,12 +66,14 @@ const Project: React.FC<ProjectProps> = ({
     }
   };
 
+
   // Demo 링크 열기
   const openDemo = () => {
     if (homeLink && homeLink.trim() !== "") {
       window.open(homeLink, '_blank', 'noopener,noreferrer');
     }
   };
+
 
   // ESC 키로 모달 닫기
   useEffect(() => {
@@ -76,14 +83,17 @@ const Project: React.FC<ProjectProps> = ({
       }
     };
 
+
     if (isModalOpen) {
       document.addEventListener("keydown", handleKeyDown);
     }
+
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [isModalOpen]);
+
 
   // 커스텀 화살표 컴포넌트
   const CustomArrowPrev = (
@@ -108,6 +118,7 @@ const Project: React.FC<ProjectProps> = ({
     </button>
   );
 
+
   const CustomArrowNext = (
     onClickHandler: () => void,
     hasNext: boolean,
@@ -129,6 +140,7 @@ const Project: React.FC<ProjectProps> = ({
       <FaChevronRight className="text-gray-700" size={16} />
     </button>
   );
+
 
   return (
     <>
@@ -163,6 +175,7 @@ const Project: React.FC<ProjectProps> = ({
             </div>
           </div>
 
+
           {/* 오른쪽: 간단한 프로젝트 정보 */}
           <div className="lg:w-3/5 w-full p-6 flex flex-col justify-between lg:h-[200px] min-h-[160px]">
             {/* 상단: 기본 정보 */}
@@ -176,11 +189,13 @@ const Project: React.FC<ProjectProps> = ({
                 </span>
               </div>
 
+
               {/* 참여인원 */}
               <div className="flex items-center mb-3">
                 <FiUsers className="text-gray-500 mr-2" size={16} />
                 <span className="text-sm text-gray-600">{teamSize}</span>
               </div>
+
 
               {/* 간단한 설명 */}
               <div className="mb-4 h-12 overflow-hidden">
@@ -189,6 +204,7 @@ const Project: React.FC<ProjectProps> = ({
                 </p>
               </div>
             </div>
+
 
             {/* 하단: 버튼들 */}
             <div className="project-card-buttons flex space-x-2 mt-auto">
@@ -206,6 +222,7 @@ const Project: React.FC<ProjectProps> = ({
                 자세히 보기
               </button>
 
+
               {githubLink && githubLink.trim() !== "" && (
                 <button
                   type="button"
@@ -222,6 +239,7 @@ const Project: React.FC<ProjectProps> = ({
                   <span>GitHub</span>
                 </button>
               )}
+
 
               {homeLink && homeLink.trim() !== "" && (
                 <button
@@ -244,6 +262,7 @@ const Project: React.FC<ProjectProps> = ({
         </div>
       </div>
 
+
       {/* 모달 */}
       {isModalOpen && (
         <div
@@ -264,6 +283,7 @@ const Project: React.FC<ProjectProps> = ({
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -translate-y-16 translate-x-16"></div>
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-white rounded-full translate-y-12 -translate-x-12"></div>
               </div>
+
 
               <div className="relative z-10 flex justify-between items-start">
                 <div>
@@ -294,6 +314,7 @@ const Project: React.FC<ProjectProps> = ({
               </div>
             </div>
 
+
             {/* 모달 콘텐츠 */}
             <div className="p-6 overflow-y-auto max-h-[calc(95vh-120px)]">
               {/* 프로젝트 설명 */}
@@ -304,6 +325,26 @@ const Project: React.FC<ProjectProps> = ({
                     프로젝트 소개
                   </h4>
                   <p className="text-gray-700 leading-relaxed">{description}</p>
+                </div>
+              </div>
+
+              {/* 기술 스택 - 위쪽으로 이동 */}
+              <div className="bg-gradient-to-r from-gray-50 to-slate-50 p-6 rounded-xl border border-gray-200 mb-8">
+                <h4 className="font-bold text-gray-700 mb-4 flex items-center">
+                  <div className="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center mr-3">
+                    <FiCode className="text-white" size={16} />
+                  </div>
+                  사용 기술
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {skills.split(",").map((skill, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 bg-white text-gray-700 rounded-full text-sm border border-gray-200 shadow-sm"
+                    >
+                      {skill.trim()}
+                    </span>
+                  ))}
                 </div>
               </div>
 
@@ -320,6 +361,7 @@ const Project: React.FC<ProjectProps> = ({
                     </span>
                   )}
                 </div>
+
 
                 <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl relative">
                   <Carousel
@@ -351,6 +393,7 @@ const Project: React.FC<ProjectProps> = ({
                 </div>
               </div>
 
+
               {/* 정보 섹션 */}
               <div className="space-y-6 mb-8">
                 {/* 담당 역할 */}
@@ -372,6 +415,7 @@ const Project: React.FC<ProjectProps> = ({
                     ))}
                   </ul>
                 </div>
+
 
                 {/* 성과 및 배운 점 */}
                 {achievements && achievements.length > 0 && (
@@ -396,25 +440,6 @@ const Project: React.FC<ProjectProps> = ({
                 )}
               </div>
 
-              {/* 기술 스택 */}
-              <div className="bg-gradient-to-r from-gray-50 to-slate-50 p-6 rounded-xl border border-gray-200 mb-8">
-                <h4 className="font-bold text-gray-700 mb-4 flex items-center">
-                  <div className="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center mr-3">
-                    <FiCode className="text-white" size={16} />
-                  </div>
-                  사용 기술
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {skills.split(",").map((skill, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-white text-gray-700 rounded-full text-sm border border-gray-200 shadow-sm"
-                    >
-                      {skill.trim()}
-                    </span>
-                  ))}
-                </div>
-              </div>
 
               {/* 링크 버튼들 */}
               <div className="flex justify-center space-x-4 pt-6 border-t border-gray-200">
@@ -446,5 +471,6 @@ const Project: React.FC<ProjectProps> = ({
     </>
   );
 };
+
 
 export default Project;

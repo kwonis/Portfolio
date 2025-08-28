@@ -29,14 +29,18 @@ const BulletPoint: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   </p>
 );
 
-// 교육 항목 컴포넌트
-const EducationItem: React.FC<{ title: string; period: string }> = ({
-  title,
-  period,
-}) => (
+// 교육 항목 컴포넌트 - description 추가
+const EducationItem: React.FC<{ 
+  title: string; 
+  period: string; 
+  description?: string; 
+}> = ({ title, period, description }) => (
   <div className="mb-4 p-4 bg-gray-50 rounded-lg border-l-4 border-blue-500">
     <p className="mb-1 font-semibold text-gray-900 text-sm leading-tight">{title}</p>
-    <p className="text-gray-600 text-xs font-medium">{period}</p>
+    <p className="text-gray-600 text-xs font-medium mb-2">{period}</p>
+    {description && (
+      <p className="text-gray-600 text-xs leading-relaxed">{description}</p>
+    )}
   </div>
 );
 
@@ -52,34 +56,39 @@ const AwardItem: React.FC<{ title: string; description: string }> = ({
 );
 
 const Introduction: React.FC = () => {
-  const aboutMeItems = [
-    "개발에 대한 열정과 경험을 가지고 있습니다.",
-    "문제 해결과 코드 작성에 대한 즐거움을 느낍니다.",
-    "새로운 기술에 관심을 가지고 공부합니다.",
-    "다양한 분야에서 함께 일하는 것을 선호합니다.",
-  ];
+const aboutMeItems = [
+  "AI, 의료, 데이터 분석, 협업 도구 등 다양한 도메인에서 프론트엔드 개발을 경험했습니다.",
+  "React, Vue.js, TypeScript를 활용한 사용자 중심의 웹 애플리케이션 개발에 특화되어 있습니다.",
+  "카카오맵 API, ChatGPT API, OAuth 2.0 등 다양한 외부 서비스 연동 경험을 보유하고 있습니다.",
+  "PWA, SSE, WebSocket 등 최신 웹 기술을 활용한 실시간 서비스 구현 경험이 있습니다.",
+  "팀 프로젝트에서 지속적으로 수상하며 협업과 문제 해결 능력을 입증했습니다."
+];
+
 
   const educationItems = [
     {
-      title: "한양대학교 ERICA 신산업소프트웨어학과 중국학과",
-      period: "(2017.03 ~ 2023.02)",
+      title: "삼성 청년 소프트웨어 아카데미 12기(SSAFY)",
+      period: "(2024.07 ~ 2025.07)",
+      description: "Python, Django, React, Vue.js를 활용한 풀스택 웹 개발 및 팀 프로젝트 경험"
     },
     {
       title: "코드스테이츠 프론트엔드 부트캠프",
       period: "(2023.04 ~ 2023.10)",
+      description: "JavaScript, React, HTML/CSS, 알고리즘 및 자료구조, 협업 도구 활용법 학습"
     },
     {
-      title: "삼성 청년 소프트웨어 아카데미 12기(SSAFY)",
-      period: "(2024.07 ~ 2025.07)",
+      title: "한양대학교 ERICA 신산업소프트웨어학과 중국학과",
+      period: "(2017.03 ~ 2023.02)",
+      description: "컴퓨터공학 기초, 프로그래밍 언어(C, Python), 데이터베이스, 소프트웨어공학 및 중국어 전공"
     },
   ];
 
   const awards = [
-        {
+    {
       title: "SSAFY 전체 최종 발표회 3등",
       description: "토닥 프로젝트로 수상",
     },
-        {
+    {
       title: "SSAFY 특화프로젝트 경연대회 우수상 1등(빅데이터 부분)",
       description: "소상고민 프로젝트로 수상",
     },
@@ -175,6 +184,7 @@ const Introduction: React.FC = () => {
                     key={index}
                     title={item.title}
                     period={item.period}
+                    description={item.description}
                   />
                 ))}
               </div>
@@ -193,8 +203,6 @@ const Introduction: React.FC = () => {
                 ))}
               </div>
             </div>
-
-
           </div>
         </div>
       </div>
